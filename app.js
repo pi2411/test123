@@ -8,8 +8,9 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require('passport-local-mongoose');
+const cookieParser = require('cookie-parser');
 const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
-const FacebookStrategy = require("passport-facebook").Strategy;
+const facebookStrategy = require('passport-facebook').Strategy
 const findOrCreate = require('mongoose-findorcreate');
 const homeStartingContent = "Lacus vel facilisis volutpat est velit egestas dui id ornare. Semper auctor neque vitae tempus quam. Sit amet cursus sit amet dictum sit amet justo. Viverra tellus in hac habitasse. Imperdiet proin fermentum leo vel orci porta. Donec ultrices tincidunt arcu non sodales neque sodales ut. Mattis molestie a iaculis at erat pellentesque adipiscing. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Odio euismod lacinia at quis risus sed vulputate odio ut. Cursus mattis molestie a iaculis at erat pellentesque adipiscing.";
 const aboutContent = "Hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Non diam phasellus vestibulum lorem sed. Platea dictumst quisque sagittis purus sit. Egestas sed sed risus pretium quam vulputate dignissim suspendisse. Mauris in aliquam sem fringilla. Semper risus in hendrerit gravida rutrum quisque non tellus orci. Amet massa vitae tortor condimentum lacinia quis vel eros. Enim ut tellus elementum sagittis vitae. Mauris ultrices eros in cursus turpis massa tincidunt dui.";
@@ -23,69 +24,134 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+  app.use(cookieParser());
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
-mongoose.connect("mongodb://localhost:27017/userDB",
- {useNewUrlParser: true,
-  useUnifiedTopology: true
-},
-);
-mongoose.set('useCreateIndex', true);
-const userSchema = new mongoose.Schema ({
-  email: String,
-  password: String,
-  googleId:String,
-  facebookId:String,
-  secret:String,
-});
-userSchema.plugin(passportLocalMongoose);
-userSchema.plugin(findOrCreate);
-const User = new mongoose.model("User", userSchema);
-
-passport.use(User.createStrategy());
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
-});
-
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    done(err, user);
-  });
-});
+const User = require("./models/User");
 
 passport.use(new GoogleStrategy({
-  clientID:     process.env.CLINET_ID,
-  clientSecret: process.env.CLINTE_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/tests",
-  passReqToCallback   : true
-},
-function(request, accessToken, refreshToken, profile, done) {
-  // console.log(profile);
-  User.findOrCreate({ googleId: profile.id ,username: profile.emails[0].value }, function (err, user) {
-    return done(err, user);
-  });
-}
-));
-passport.use(new FacebookStrategy({
-    clientID: process.env.CLINTE_ID_FB,
-    clientSecret: process.env.CLINET_SECRET_FB,
-    callbackURL: "http://localhost:3000/auth/facebook/secrets",
-    profileFields: ['id', 'displayName', 'photos', 'email'],
+    clientID:     "695366370115-v1rf24a68mnq83oi4gpkbdbt8mqibkcf.apps.googleusercontent.com",
+    clientSecret: "jtsRGWIYksAq2BHIgtaEaBlK",
+    callbackURL: "http://localhost:3000/auth/google/tests",
+    profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
   },
-
   function(accessToken, refreshToken, profile, cb) {
-     // console.log(profile);
-    User.findOrCreate({ facebookId: profile.id,username: profile.emails[0].value }, function (err, user) {
-      return cb(err, user);
-    });
-  }
+         User.findOrCreate({uid: profile.id}, function (err, user) {
+           console.log('A new uxer from "%s" was inserted', user.uid);
+           if(user){
+             user.pic = profile.photos[0].value;
+             user.token=accessToken,
+             user.username= profile.emails[0].value;
+             user.email= profile.emails[0].value,
+             user.name=profile.name.givenName + ' ' + profile.name.familyName,
+             user.save();
+             return cb(err, user);
+           }
+
+         });
+     }
 ));
+
+
+passport.use(new facebookStrategy({
+
+    // pull in our app id and secret from our auth.js file
+    clientID        : "357939236043170",
+    clientSecret    : "8fc3ca87e980e5d60bf16952cd5970b7",
+    callbackURL     : "http://localhost:3000/auth/facebook/profile",
+  profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
+
+},
+
+function(accessToken, refreshToken, profile, cb) {
+       User.findOrCreate({uid: profile.id}, function (err, user) {
+         console.log('A new uxer from "%s" was inserted', user.uid);
+         if(user){
+           user.pic = profile.photos[0].value;
+           user.token=accessToken,
+           user.username= profile.emails[0].value;
+           user.email= profile.emails[0].value,
+           user.name=profile.name.givenName + ' ' + profile.name.familyName,
+           user.save();
+           return cb(err, user);
+         }
+
+       });
+   }
+        // const newUser = User({
+        //   username: profile.emails[0].value ,
+        //   token:accessToken,
+        //   pic:profile.photos[0].value,
+        //   email:profile.emails[0].value,
+        //   name:profile.name.givenName + ' ' + profile.name.familyName,
+
+));
+
+                             //test check if mongoose work
+// const newUser = User({
+//   uid:"ygal",
+//   token:1234,
+//   email:"ygalna9764@gmail.com",
+//   name:"ygal",
+//   gender:"male",
+//   pic:"pic",
+// })
+// newUser.save();
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
+
+// used to deserialize the user
+passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+        done(err, user);
+    });
+});
+
+app.get('/profile', isLoggedIn, function(req, res) {
+    console.log(req.user)
+    res.render('profile', {
+        user : req.user // get the user out of session and pass to template
+    });
+});
+
+// route middleware to make sure
+function isLoggedIn(req, res, next) {
+
+    // if user is authenticated in the session, carry on
+    if (req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/');
+}
+app.get('/auth/google',
+  passport.authenticate('google', { scope:["profile","email"] }
+));
+app.get("/auth/google/tests",
+    passport.authenticate( "google", {
+        successRedirect: "/profile",
+        // failureRedirect: "/login",
+}));
+app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+
+app.get('/auth/facebook/profile',
+        passport.authenticate('facebook', {
+            successRedirect : '/profile',
+            failureRedirect : '/'
+        }));
+
+app.get('/',(req,res) => {
+    res.render("index")
+})
+app.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
+    });
+
 
 const postSchema = new mongoose.Schema({
   title:String,
@@ -137,99 +203,7 @@ console.log(namePost);
   });
 });
 
-
-
 //text area//
-app.get('/auth/google',
-  passport.authenticate('google', { scope:["profile","email"] }
-));
-app.get("/auth/google/tests",
-    passport.authenticate( "google", {
-        successRedirect: "/secrets",
-        // failureRedirect: "/login",
-}));
-app.get('/auth/facebook',
-  passport.authenticate('facebook'));
-
-app.get('/auth/facebook/secrets',
-  passport.authenticate('facebook', { failureRedirect: '/login' }),
-  function(req, res) {
-
-    // Successful authentication, redirect home.
-    res.redirect('/secrets');
-  });
-app.get("/login",function(req,res){
-  res.render("login");
-})
-app.post("/login",function(req,res){
-  const user = User({
-    username:req.body.username,
-    password:req.body.password,
-  })
-  req.login(user,function(err){
-    if(err){
-      res.redirect("/home");
-    }else{
-      passport.authenticate("local")(req,res,function(err){
-        res.redirect("secrets")
-      })
-    }
-
-  })
-})
-app.get("/register",function(req,res){
-  res.render("register")
-})
-app.post("/register",function(req,res){
-  User.register({username:req.body.username},req.body.password,function(err,user){
-    if(err){
-      console.log(err);
-      res.redirect("/register")
-    }else{
-      passport.authenticate("local")(req,res,function(err){
-        res.redirect("secrets")
-      })
-    }
-  })
-})
-app.get("/secrets",function(req,res){
-  User.find({"secret":{$ne:null}},function(err,user){
-    if(!err){
-      res.render("secrets",{usersSecrets:user})
-    }
-  })
-})
-app.get("/logout",function(req,res){
-  Post.find({},function(err,foundPost){
-    res.render("home",{startingContent: homeStartingContent,post: foundPost});
-  })
-})
-app.get("/submit",function(req,res){
-  if(req.isAuthenticated()){
-    res.render("submit");
-  }else{
-    res.redirect("/login");
-  }
-})
-app.post("/submit",function(req,res){
-  const submititSecrets = req.body.secret;
-  // console.log(submititSecrets);
-   console.log(req.user.id);
-  User.findById(req.user.id,function(err,foundScrets){
-    if(err){
-      console.log(err);
-    }else{
-      if(foundScrets){
-        foundScrets.secret = submititSecrets;
-        foundScrets.save(function(err){
-          if(!err){
-            res.redirect("/secrets");
-          }
-        })
-      }
-    }
-  })
-})
 app.listen(3000, function() {
   console.log("Server started on port 3000.");
 });

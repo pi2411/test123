@@ -1,0 +1,37 @@
+
+<%- include('partials/header') %>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <a class="btn  btn-social " href="/logout" role="button">
+            <i class="fab fa-google"></i>
+            Logout
+          </a>
+    </div>
+
+    <div class="row">
+
+        <!-- FACEBOOK INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
+
+                    <p>
+                        <strong>id</strong>: <%= user.uid %><br>
+                        <strong>token</strong>: <%= user.token %><br>
+                        <strong>email</strong>: <%= user.email %><br>
+                        <strong>name</strong>: <%= user.name %><br>
+                        <strong>gender</strong>: <%= user.gender %><br>
+                        <img src="<%=user.pic%>" width="200" height="200" alt="">
+
+                    </p>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<%- include("partials/footer"); -%>
