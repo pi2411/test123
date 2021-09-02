@@ -1,6 +1,8 @@
 {
   "name": "ejs-challenge",
   "version": "1.0.0",
+  "private": true,
+  "proxy": "https://glacial-badlands-70987.herokuapp.com/",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
