@@ -144,9 +144,7 @@ app.get('/auth/facebook/profile',
             failureRedirect : '/'
         }));
 
-app.get('/',(req,res) => {
-    res.render("index")
-})
+
 app.get('/logout', function(req, res) {
         req.logout();
         res.redirect('/');
@@ -204,6 +202,77 @@ console.log(namePost);
 });
 
 //text area//
+app.get("/login",function(req,res){
+  res.render("login");
+})
+app.post("/login",function(req,res){
+  const user = User({
+    username:req.body.username,
+    password:req.body.password,
+  })
+  req.login(user,function(err){
+    if(err){
+      res.redirect("/");
+    }else{
+      passport.authenticate("local")(req,res,function(err){
+        res.redirect("profile")
+      })
+    }
+
+  })
+})
+app.get("/register",function(req,res){
+  res.render("register")
+})
+app.post("/register",function(req,res){
+  User.register({username:req.body.username},req.body.password,function(err,user){
+    if(err){
+      console.log(err);
+      res.redirect("/register")
+    }else{
+      passport.authenticate("local")(req,res,function(err){
+        res.redirect("profile")
+      })
+    }
+  })
+})
+app.get("/profile",function(req,res){
+  User.find({"secret":{$ne:null}},function(err,user){
+    if(!err){
+      res.render("profile",{usersSecrets:user})
+    }
+  })
+})
+app.get("/logout",function(req,res){
+  req.logout();
+  res.render("/");
+})
+app.get("/submit",function(req,res){
+  if(req.isAuthenticated()){
+    res.render("submit");
+  }else{
+    res.redirect("/login");
+  }
+})
+app.post("/submit",function(req,res){
+  const submititSecrets = req.body.secret;
+  // console.log(submititSecrets);
+   console.log(req.user.id);
+  User.findById(req.user.id,function(err,foundScrets){
+    if(err){
+      console.log(err);
+    }else{
+      if(foundScrets){
+        foundScrets.secret = submititSecrets;
+        foundScrets.save(function(err){
+          if(!err){
+            res.redirect("/profile");
+          }
+        })
+      }
+    }
+  })
+})
 app.listen(3000, function() {
   console.log("Server started on port 3000.");
 });
