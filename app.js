@@ -156,28 +156,28 @@ app.get('/logout', function(req, res) {
       content:String,
     })
     const Post = mongoose.model("post",postSchema);
-
+    
     // let posts = [];
-
+    
     app.get("/", function(req, res){
         Post.find({},function(err,foundPost){
           res.render("home",{startingContent: homeStartingContent,post: foundPost});
         })
-
+    
     });
-
+    
     app.get("/about", function(req, res){
       res.render("about", {aboutContent: aboutContent});
     });
-
+    
     app.get("/contact", function(req, res){
       res.render("contact", {contactContent: contactContent});
     });
-
+    
     app.get("/compose", function(req, res){
       res.render("compose");
     });
-
+    
     app.post("/compose", function(req, res){
     const nameTitle = req.body.postTitle;
     const nameBody = req.body.postBody;
@@ -200,7 +200,7 @@ app.get('/logout', function(req, res) {
         res.render("post", {title: post.title,content: post.content,});
       });
     });
-
+    
 //text area//
 app.get("/login",function(req,res){
   res.render("login");
@@ -273,10 +273,6 @@ app.post("/submit",function(req,res){
     }
   })
 })
-let port = process.env.PORT;
-if(port == null || port == ""){
-  port = 3000;
-}
-app.listen(port, function() {
+app.listen(3000, function() {
   console.log("Server started on port 3000.");
 });
