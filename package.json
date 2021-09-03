@@ -4,12 +4,13 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-     "heroku-postbuild": "npm run  && npm run build"
+    "heroku-postbuild": "npm run  && npm run build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
