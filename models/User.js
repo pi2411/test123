@@ -19,11 +19,6 @@ const userSchema = new mongoose.Schema({
 });
 userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
-mongoose.connection.on('connected', () => {
-    console.log('Mongoose is connected!!!!');
-});
-
-// Data parsing
 
 
 module.exports = mongoose.model("user",userSchema);

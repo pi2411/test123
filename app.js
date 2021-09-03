@@ -152,6 +152,17 @@ app.get('/logout', function(req, res) {
     });
 
 
+
+//from user
+mongoose.connection.on('connected', () => {
+    console.log('Mongoose is connected!!!!');
+});
+
+// Data parsing
+
+
+
+
     const postSchema = new mongoose.Schema({
       title:String,
       content:String,
