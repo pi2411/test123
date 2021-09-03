@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const passportLocalMongoose = require('passport-local-mongoose');
 const findOrCreate = require('mongoose-findorcreate');
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/fbAuth", {
+mongoose.connect("mongodb://localhost:27017/fbAuth", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
