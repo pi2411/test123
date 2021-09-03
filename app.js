@@ -1,5 +1,6 @@
 //jshint esversion:6
 require('dotenv').config();
+const PORT = process.env.PORT || 8080;
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -200,7 +201,20 @@ app.get('/logout', function(req, res) {
         res.render("post", {title: post.title,content: post.content,});
       });
     });
+//api start
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
+// Step 3
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+}
+
+
+// HTTP request logger
+
+//api and
 //text area//
 app.get("/login",function(req,res){
   res.render("login");
@@ -273,25 +287,6 @@ app.post("/submit",function(req,res){
     }
   })
 })
-
-app.use(session({
-    name: "random_session",
-    secret: "yryGGeugidx34otGDuSF5sD9R8g0Gü3r8",
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-        path: "/",
-        secure: true,
-        //domain: ".herokuapp.com", REMOVE THIS HELPED ME (I dont use a domain anymore)
-        httpOnly: true
-    }
-}));
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3000;
-}
-
-
-app.listen(port, function() {
-  console.log("Server is started successfully.");
+app.listen(PORT, function() {
+  console.log("Server started on port 3000.");
 });
