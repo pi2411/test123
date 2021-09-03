@@ -1,6 +1,5 @@
 //jshint esversion:6
 require('dotenv').config();
-const PORT = process.env.PORT || 8080;
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -152,44 +151,33 @@ app.get('/logout', function(req, res) {
     });
 
 
-
-//from user
-mongoose.connection.on('connected', () => {
-    console.log('Mongoose is connected!!!!');
-});
-
-// Data parsing
-
-
-
-
     const postSchema = new mongoose.Schema({
       title:String,
       content:String,
     })
     const Post = mongoose.model("post",postSchema);
-
+    
     // let posts = [];
-
+    
     app.get("/", function(req, res){
         Post.find({},function(err,foundPost){
           res.render("home",{startingContent: homeStartingContent,post: foundPost});
         })
-
+    
     });
-
+    
     app.get("/about", function(req, res){
       res.render("about", {aboutContent: aboutContent});
     });
-
+    
     app.get("/contact", function(req, res){
       res.render("contact", {contactContent: contactContent});
     });
-
+    
     app.get("/compose", function(req, res){
       res.render("compose");
     });
-
+    
     app.post("/compose", function(req, res){
     const nameTitle = req.body.postTitle;
     const nameBody = req.body.postBody;
@@ -212,20 +200,7 @@ mongoose.connection.on('connected', () => {
         res.render("post", {title: post.title,content: post.content,});
       });
     });
-//api start
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-// Step 3
-
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static("build"));
-}
-
-
-// HTTP request logger
-
-//api and
+    
 //text area//
 app.get("/login",function(req,res){
   res.render("login");
@@ -298,6 +273,6 @@ app.post("/submit",function(req,res){
     }
   })
 })
-app.listen(PORT, function() {
+app.listen(3000, function() {
   console.log("Server started on port 3000.");
 });
