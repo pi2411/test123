@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
      "heroku-postbuild": "npm run install-client && npm run build",
      "start": "app.js",
-   }.
+   },
   "author": "",
   "license": "ISC",
   "dependencies": {
