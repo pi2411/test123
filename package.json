@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -33,5 +33,8 @@
     "url": "https://github.com/pi2411/MyFirsApp/issues"
   },
   "homepage": "https://github.com/pi2411/MyFirsApp#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
