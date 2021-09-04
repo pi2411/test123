@@ -42,6 +42,7 @@ passport.use(new GoogleStrategy({
     clientID:     "695366370115-v1rf24a68mnq83oi4gpkbdbt8mqibkcf.apps.googleusercontent.com",
     clientSecret: "jtsRGWIYksAq2BHIgtaEaBlK",
     callbackURL: "http://localhost:3000/auth/google/tests",
+    proxy: true, 
     profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -68,6 +69,7 @@ passport.use(new facebookStrategy({
     clientID        : "357939236043170",
     clientSecret    : "8fc3ca87e980e5d60bf16952cd5970b7",
     callbackURL     : "http://localhost:3000/auth/facebook/profile",
+    proxy: true, 
   profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
 
 },
