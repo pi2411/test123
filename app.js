@@ -151,56 +151,56 @@ app.get('/logout', function(req, res) {
     });
 
 
-const postSchema = new mongoose.Schema({
-  title:String,
-  content:String,
-})
-const Post = mongoose.model("post",postSchema);
-
-// let posts = [];
-
-app.get("/", function(req, res){
-    Post.find({},function(err,foundPost){
-      res.render("home",{startingContent: homeStartingContent,post: foundPost});
+    const postSchema = new mongoose.Schema({
+      title:String,
+      content:String,
     })
-
-});
-
-app.get("/about", function(req, res){
-  res.render("about", {aboutContent: aboutContent});
-});
-
-app.get("/contact", function(req, res){
-  res.render("contact", {contactContent: contactContent});
-});
-
-app.get("/compose", function(req, res){
-  res.render("compose");
-});
-
-app.post("/compose", function(req, res){
-const nameTitle = req.body.postTitle;
-const nameBody = req.body.postBody;
-console.log(nameTitle)
-console.log(nameBody)
-const newPost = Post({
-  title:nameTitle,
-  content:nameBody,
-})
-newPost.save(function(err){
-  if(!err){
-    res.redirect("/");
-  }
-});
-})
-app.get("/posts/:postName", function(req, res){
-const namePost = req.params.postName;
-console.log(namePost);
-  Post.findOne({title: namePost}, function(err, post){
-    res.render("post", {title: post.title,content: post.content,});
-  });
-});
-
+    const Post = mongoose.model("post",postSchema);
+    
+    // let posts = [];
+    
+    app.get("/", function(req, res){
+        Post.find({},function(err,foundPost){
+          res.render("home",{startingContent: homeStartingContent,post: foundPost});
+        })
+    
+    });
+    
+    app.get("/about", function(req, res){
+      res.render("about", {aboutContent: aboutContent});
+    });
+    
+    app.get("/contact", function(req, res){
+      res.render("contact", {contactContent: contactContent});
+    });
+    
+    app.get("/compose", function(req, res){
+      res.render("compose");
+    });
+    
+    app.post("/compose", function(req, res){
+    const nameTitle = req.body.postTitle;
+    const nameBody = req.body.postBody;
+    console.log(nameTitle)
+    console.log(nameBody)
+    const newPost = Post({
+      title:nameTitle,
+      content:nameBody,
+    })
+    newPost.save(function(err){
+      if(!err){
+        res.redirect("/");
+      }
+    });
+    })
+    app.get("/posts/:postName", function(req, res){
+    const namePost = req.params.postName;
+    console.log(namePost);
+      Post.findOne({title: namePost}, function(err, post){
+        res.render("post", {title: post.title,content: post.content,});
+      });
+    });
+    
 //text area//
 app.get("/login",function(req,res){
   res.render("login");
