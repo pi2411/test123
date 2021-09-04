@@ -41,8 +41,7 @@ const User = require("./models/User");
 passport.use(new GoogleStrategy({
     clientID:     "695366370115-v1rf24a68mnq83oi4gpkbdbt8mqibkcf.apps.googleusercontent.com",
     clientSecret: "jtsRGWIYksAq2BHIgtaEaBlK",
-    callbackURL: "http://localhost:3000/auth/google/tests",
-    proxy: true, 
+    callbackURL: "https://glacial-inlet-95609.herokuapp.com/auth/google/tests",
     profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -68,8 +67,7 @@ passport.use(new facebookStrategy({
     // pull in our app id and secret from our auth.js file
     clientID        : "357939236043170",
     clientSecret    : "8fc3ca87e980e5d60bf16952cd5970b7",
-    callbackURL     : "http://localhost:3000/auth/facebook/profile",
-    proxy: true, 
+    callbackURL     : "https://glacial-inlet-95609.herokuapp.com/auth/facebook/profile",
   profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
 
 },
@@ -281,7 +279,6 @@ app.post("/submit",function(req,res){
     }
   })
 })
-app.listen(process.env.PORT || 5000, function() {
+app.listen(3000, function() {
   console.log("Server started on port 3000.");
 });
-
