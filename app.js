@@ -18,15 +18,9 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 const app = express();
 app.set('view engine', 'ejs');
 app.use(session({
-  secret: 'keyboard cat',
+  secret: process.env.SESSION_SECRET || 'keyboard cat',
   resave: false,
   saveUninitialized: true,
-  cookie: {
-    path: "/",
-    secure: true,
-    //domain: ".herokuapp.com", REMOVE THIS HELPED ME (I dont use a domain anymore)
-    httpOnly: true
-}
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -134,17 +128,17 @@ function isLoggedIn(req, res, next) {
     // if they aren't redirect them to the home page
     res.redirect('/');
 }
-app.get('https://glacial-inlet-95609.herokuapp.com/auth/google',
+app.get('/auth/google',
   passport.authenticate('google', { scope:["profile","email"] }
 ));
-app.get("https://glacial-inlet-95609.herokuapp.com/auth/google/tests",
+app.get("/auth/google/tests",
     passport.authenticate( "google", {
         successRedirect: "/profile",
         // failureRedirect: "/login",
 }));
-app.get('https://glacial-inlet-95609.herokuapp.com/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
-app.get('https://glacial-inlet-95609.herokuapp.com/auth/facebook/profile',
+app.get('/auth/facebook/profile',
         passport.authenticate('facebook', {
             successRedirect : '/profile',
             failureRedirect : '/'
