@@ -134,17 +134,17 @@ function isLoggedIn(req, res, next) {
     // if they aren't redirect them to the home page
     res.redirect('/');
 }
-app.get('/auth/google',
+app.get('https://glacial-inlet-95609.herokuapp.com/auth/google',
   passport.authenticate('google', { scope:["profile","email"] }
 ));
-app.get("/auth/google/tests",
+app.get("https://glacial-inlet-95609.herokuapp.com/auth/google/tests",
     passport.authenticate( "google", {
         successRedirect: "/profile",
         // failureRedirect: "/login",
 }));
-app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+app.get('https://glacial-inlet-95609.herokuapp.com/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
-app.get('/auth/facebook/profile',
+app.get('https://glacial-inlet-95609.herokuapp.com/auth/facebook/profile',
         passport.authenticate('facebook', {
             successRedirect : '/profile',
             failureRedirect : '/'
