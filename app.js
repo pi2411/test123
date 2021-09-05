@@ -135,8 +135,8 @@ app.get('/auth/google',
 ));
 app.get("/auth/google/profile",
     passport.authenticate( "google", {
-        successRedirect: "/register/profile",
-        // failureRedirect: "/login",
+        successRedirect: "/profile",
+        failureRedirect: "/login",
 }));
 app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
