@@ -27,7 +27,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
   // app.use(cookieParser());
-app.use(express.static("views"));
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -37,7 +37,7 @@ const Post = require("./models/User");
 passport.use(new GoogleStrategy({
     clientID:     process.env.CLINET_ID,
     clientSecret: process.env.CLINTE_SECRET,
-    callbackURL: "https://stark-caverns-47144.herokuapp.com/register/auth/google/profile",
+    callbackURL: "https://stark-caverns-47144.herokuapp.com/auth/google/profile",
     profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -133,7 +133,7 @@ function isLoggedIn(req, res, next) {
 app.get('/auth/google',
   passport.authenticate('google', { scope:["profile","email"] }
 ));
-app.get("/auth/google/tests",
+app.get("/auth/google/profile",
     passport.authenticate( "google", {
         successRedirect: "/profile",
         // failureRedirect: "/login",
