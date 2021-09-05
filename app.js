@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require('passport-local-mongoose');
- const cookieParser = require('cookie-parser');
+ // const cookieParser = require('cookie-parser');
 const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 const facebookStrategy = require('passport-facebook').Strategy
 const findOrCreate = require('mongoose-findorcreate');
@@ -23,16 +23,10 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
-  cookie: {
-        path: "/",
-        secure: true,
-        //domain: ".herokuapp.com", REMOVE THIS HELPED ME (I dont use a domain anymore)
-        httpOnly: true
-    }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-   app.use(cookieParser());
+   // app.use(cookieParser());
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
   extended: true
@@ -121,9 +115,10 @@ passport.deserializeUser(function(id, done) {
 
 app.get('/profile', isLoggedIn, function(req, res) {
     console.log(req.user)
-    res.render('profile', {
-        user : req.user // get the user out of session and pass to template
-    });
+    res.json({
+        message:"You have accessed the protected endpoint!",
+        yourUserInfo : req.user,
+      });
 });
 
 // route middleware to make sure
