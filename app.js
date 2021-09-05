@@ -33,9 +33,9 @@ app.use(bodyParser.urlencoded({
 const User = require("./models/User");
 
 passport.use(new GoogleStrategy({
-    clientID:     "695366370115-v1rf24a68mnq83oi4gpkbdbt8mqibkcf.apps.googleusercontent.com",
-    clientSecret: "jtsRGWIYksAq2BHIgtaEaBlK",
-    callbackURL: "http://localhost:3000/auth/google/tests",
+    clientID:     process.env.GOOGLE_OAUTH_BLOG_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_OAUTH_BLOG__CLIENT_SECRET,
+    callbackURL: "http://localhost:3000/auth/google/profile",
     profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
   },
   function(accessToken, refreshToken, profile, cb) {
