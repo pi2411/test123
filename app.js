@@ -158,12 +158,12 @@ app.get('/logout', function(req, res) {
 
 
 
-    // let posts = [];
+    let posts = [];
 
   app.get("/", function(req, res){
     res.render("home", {
       startingContent: homeStartingContent,
-      posts: newPost
+      posts: posts
       });
   });
 
