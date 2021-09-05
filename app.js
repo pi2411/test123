@@ -115,12 +115,12 @@ passport.deserializeUser(function(id, done) {
 
 app.get('/profile', isLoggedIn, function(req, res) {
     console.log(req.user)
-    res.json({
-        message:"You have accessed the protected endpoint!",
-        yourUserInfo : req.user,
-      });
-    // res.render('profile', {user : req.user // get the user out of session and pass to template
+    // res.json({
+    //     message:"You have accessed the protected endpoint!",
+    //     yourUserInfo : req.user,
     //   });
+    res.render('profile', {user : req.user // get the user out of session and pass to template
+      });
 });
 
 // route middleware to make sure
