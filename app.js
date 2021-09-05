@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -131,7 +131,7 @@ function isLoggedIn(req, res, next) {
     res.redirect('/');
 }
 app.get('/auth/google',
-  passport.authenticate('google', { scope:["email"] }
+  passport.authenticate('google', { scope:["profile","email"] }
 ));
 app.get("/auth/google/profile",
     passport.authenticate( "google", {
