@@ -1,5 +1,5 @@
 //jshint esversion:6
-require('dotenv').config();
+// require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -35,8 +35,8 @@ app.use(bodyParser.urlencoded({
 const User = require("./models/User");
 const Post = require("./models/User");
 passport.use(new GoogleStrategy({
-    clientID:     env.CLINET_ID,
-    clientSecret: env.CLINTE_SECRET,
+    clientID:     process.env.CLINET_ID,
+    clientSecret: process.env.CLINTE_SECRET,
     callbackURL: "https://stark-caverns-47144.herokuapp.com/auth/google/profile",
     profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
   },
