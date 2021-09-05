@@ -1,7 +1,7 @@
 //jshint esversion:6
 // require('dotenv').config();
 const express = require("express");
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
@@ -30,7 +30,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(cookieParser())
+// app.use(cookieParser())
 const User = require("./models/User");
 const Post = require("./models/User");
 passport.use(new GoogleStrategy({
