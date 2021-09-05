@@ -158,12 +158,12 @@ app.get('/logout', function(req, res) {
 
 
 
-    let posts = [];
+    // let posts = [];
 
   app.get("/", function(req, res){
     res.render("home", {
       startingContent: homeStartingContent,
-      posts: posts
+      posts: newPost
       });
   });
 
@@ -184,11 +184,11 @@ app.get('/logout', function(req, res) {
     const nameBody = req.body.postBody;
     console.log(nameTitle)
     console.log(nameBody)
-    const posts = Post({
+    const newPost = Post({
       title:nameTitle,
       content:nameBody,
     })
-    posts.save(function(err){
+    newPost.save(function(err){
       if(!err){
         res.redirect("/");
       }
