@@ -1,4 +1,4 @@
-jshint esversion:6
+//jshint esversion:6
 // require('dotenv').config();
 const express = require("express");
 const cookieParser = require('cookie-parser');
@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose");
-const session = require('cookie-session');
+const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require('passport-local-mongoose');
 const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
@@ -118,6 +118,8 @@ app.get('/profile', isLoggedIn, function(req, res) {
     res.json({
         message:"You have accessed the protected endpoint!",
         yourUserInfo : req.user,
+      });
+    res.render('profile', {user : req.user // get the user out of session and pass to template
       });
 });
 
