@@ -130,7 +130,7 @@ function isLoggedIn(req, res, next) {
     // if they aren't redirect them to the home page
     res.redirect('/');
 }
-app.get('/auth/google',
+app.get('/auth/google/profile',
   passport.authenticate('google', { scope:["profile","email"] }
 ));
 app.get("/auth/google/profile",
