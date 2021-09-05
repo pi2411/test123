@@ -24,14 +24,13 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
 }));
-app.use(cookieParser())
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-
+app.use(cookieParser())
 const User = require("./models/User");
 const Post = require("./models/User");
 passport.use(new GoogleStrategy({
