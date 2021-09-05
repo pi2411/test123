@@ -37,7 +37,7 @@ const Post = require("./models/User");
 passport.use(new GoogleStrategy({
     clientID:     process.env.CLINET_ID,
     clientSecret: process.env.CLINTE_SECRET,
-    callbackURL: "https://stark-caverns-47144.herokuapp.com/auth/google/register/profile",
+    callbackURL: "https://stark-caverns-47144.herokuapp.com/register/auth/google/profile",
     profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
   },
   function(accessToken, refreshToken, profile, cb) {
