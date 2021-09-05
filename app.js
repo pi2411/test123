@@ -158,7 +158,7 @@ app.get('/logout', function(req, res) {
 
 
 
-    // let posts = [];
+    let posts = [];
 
   app.get("/", function(req, res){
     res.render("home", {
@@ -180,20 +180,17 @@ app.get('/logout', function(req, res) {
     });
 
     app.post("/compose", function(req, res){
-    const nameTitle = req.body.postTitle;
-    const nameBody = req.body.postBody;
-    console.log(nameTitle)
-    console.log(nameBody)
-    const newPost = Post({
-      title:nameTitle,
-      content:nameBody,
-    })
-    newPost.save(function(err){
-      if(!err){
-        res.redirect("/");
-      }
-    });
-    })
+    const post = {
+      title: req.body.postTitle,
+      content: req.body.postBody
+    };
+
+    posts.push(post);
+
+    res.redirect("/");
+
+  });
+
     app.get("/posts/:postName", function(req, res){
     const namePost = req.params.postName;
     console.log(namePost);
