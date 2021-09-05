@@ -35,8 +35,8 @@ app.use(bodyParser.urlencoded({
 const User = require("./models/User");
 const Post = require("./models/User");
 passport.use(new GoogleStrategy({
-    clientID:     "695366370115-rsfpsom023e7v3e31tq1kk34bqevnu5i.apps.googleusercontent.com",
-    clientSecret: "FojuirZ9IJdFwzMykk9w96u_",
+    clientID:     env.CLINET_ID,
+    clientSecret: env.CLINTE_SECRET,
     callbackURL: "https://stark-caverns-47144.herokuapp.com/auth/google/profile",
     profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
   },
