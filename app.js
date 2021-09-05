@@ -18,14 +18,14 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 const app = express();
 app.set('view engine', 'ejs');
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'keyboard cat',
+  secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
 }));
 app.use(passport.initialize());
 app.use(passport.session());
   app.use(cookieParser());
-app.use(express.static(__dirname+"/public"));
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -35,7 +35,7 @@ const User = require("./models/User");
 passport.use(new GoogleStrategy({
     clientID:     "695366370115-v1rf24a68mnq83oi4gpkbdbt8mqibkcf.apps.googleusercontent.com",
     clientSecret: "jtsRGWIYksAq2BHIgtaEaBlK",
-    callbackURL: "https://glacial-inlet-95609.herokuapp.com/auth/google/tests",
+    callbackURL: "http://localhost:3000/auth/google/tests",
     profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -61,7 +61,7 @@ passport.use(new facebookStrategy({
     // pull in our app id and secret from our auth.js file
     clientID        : "357939236043170",
     clientSecret    : "8fc3ca87e980e5d60bf16952cd5970b7",
-    callbackURL     : "https://glacial-inlet-95609.herokuapp.com/auth/facebook/profile",
+    callbackURL     : "http://localhost:3000/auth/facebook/profile",
   profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
 
 },
@@ -151,56 +151,56 @@ app.get('/logout', function(req, res) {
     });
 
 
-    const postSchema = new mongoose.Schema({
-      title:String,
-      content:String,
+const postSchema = new mongoose.Schema({
+  title:String,
+  content:String,
+})
+const Post = mongoose.model("post",postSchema);
+
+// let posts = [];
+
+app.get("/", function(req, res){
+    Post.find({},function(err,foundPost){
+      res.render("home",{startingContent: homeStartingContent,post: foundPost});
     })
-    const Post = mongoose.model("post",postSchema);
-    
-    // let posts = [];
-    
-    app.get("/", function(req, res){
-        Post.find({},function(err,foundPost){
-          res.render("home",{startingContent: homeStartingContent,post: foundPost});
-        })
-    
-    });
-    
-    app.get("/about", function(req, res){
-      res.render("about", {aboutContent: aboutContent});
-    });
-    
-    app.get("/contact", function(req, res){
-      res.render("contact", {contactContent: contactContent});
-    });
-    
-    app.get("/compose", function(req, res){
-      res.render("compose");
-    });
-    
-    app.post("/compose", function(req, res){
-    const nameTitle = req.body.postTitle;
-    const nameBody = req.body.postBody;
-    console.log(nameTitle)
-    console.log(nameBody)
-    const newPost = Post({
-      title:nameTitle,
-      content:nameBody,
-    })
-    newPost.save(function(err){
-      if(!err){
-        res.redirect("/");
-      }
-    });
-    })
-    app.get("/posts/:postName", function(req, res){
-    const namePost = req.params.postName;
-    console.log(namePost);
-      Post.findOne({title: namePost}, function(err, post){
-        res.render("post", {title: post.title,content: post.content,});
-      });
-    });
-    
+
+});
+
+app.get("/about", function(req, res){
+  res.render("about", {aboutContent: aboutContent});
+});
+
+app.get("/contact", function(req, res){
+  res.render("contact", {contactContent: contactContent});
+});
+
+app.get("/compose", function(req, res){
+  res.render("compose");
+});
+
+app.post("/compose", function(req, res){
+const nameTitle = req.body.postTitle;
+const nameBody = req.body.postBody;
+console.log(nameTitle)
+console.log(nameBody)
+const newPost = Post({
+  title:nameTitle,
+  content:nameBody,
+})
+newPost.save(function(err){
+  if(!err){
+    res.redirect("/");
+  }
+});
+})
+app.get("/posts/:postName", function(req, res){
+const namePost = req.params.postName;
+console.log(namePost);
+  Post.findOne({title: namePost}, function(err, post){
+    res.render("post", {title: post.title,content: post.content,});
+  });
+});
+
 //text area//
 app.get("/login",function(req,res){
   res.render("login");
@@ -273,5 +273,6 @@ app.post("/submit",function(req,res){
     }
   })
 })
-var port_number = server.listen(process.env.PORT || 3000);
-app.listen(port_number);
+app.listen(3000, function() {
+  console.log("Server started on port 3000.");
+});
