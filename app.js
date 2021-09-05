@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require('passport-local-mongoose');
- // const cookieParser = require('cookie-parser');
+  const cookieParser = require('cookie-parser');
 const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 const facebookStrategy = require('passport-facebook').Strategy
 const findOrCreate = require('mongoose-findorcreate');
@@ -26,7 +26,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-   // app.use(cookieParser());
+    app.use(cookieParser());
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
   extended: true
