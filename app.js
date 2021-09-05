@@ -27,7 +27,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
   // app.use(cookieParser());
-app.use(express.static("public"));
+app.use(express.static("views"));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
