@@ -20,9 +20,16 @@ const port = process.env.PORT || 3000 ;
 app.use(express.static(__dirname + "/views"));
 app.set('view engine', 'ejs');
 app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: false,
+    name: "random_session",
+    secret: "yryGGeugidx34otGDuSF5sD9R8g0Gü3r8",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        path: "/",
+        secure: true,
+        //domain: ".herokuapp.com", REMOVE THIS HELPED ME (I dont use a domain anymore)
+        httpOnly: true
+    }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
