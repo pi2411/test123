@@ -16,6 +16,8 @@ const homeStartingContent = "Lacus vel facilisis volutpat est velit egestas dui 
 const aboutContent = "Hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Non diam phasellus vestibulum lorem sed. Platea dictumst quisque sagittis purus sit. Egestas sed sed risus pretium quam vulputate dignissim suspendisse. Mauris in aliquam sem fringilla. Semper risus in hendrerit gravida rutrum quisque non tellus orci. Amet massa vitae tortor condimentum lacinia quis vel eros. Enim ut tellus elementum sagittis vitae. Mauris ultrices eros in cursus turpis massa tincidunt dui.";
 const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rhoncus urna neque viverra justo nec ultrices. Arcu dui vivamus arcu felis bibendum. Consectetur adipiscing elit duis tristique. Risus viverra adipiscing at in tellus integer feugiat. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Consequat interdum varius sit amet mattis. Iaculis nunc sed augue lacus. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Pulvinar elementum integer enim neque. Ultrices gravida dictum fusce ut placerat orci nulla. Mauris in aliquam sem fringilla ut morbi tincidunt. Tortor posuere ac ut consequat semper viverra nam libero.";
 const app = express();
+const port = process.env.PORT || 3000 ;
+app.use(express.static(__dirname + "/views"));
 app.set('view engine', 'ejs');
 app.use(session({
   secret: 'keyboard cat',
@@ -33,9 +35,9 @@ app.use(bodyParser.urlencoded({
 const User = require("./models/User");
 const Post = require("./models/User");
 passport.use(new GoogleStrategy({
-    clientID:     "695366370115-v1rf24a68mnq83oi4gpkbdbt8mqibkcf.apps.googleusercontent.com",
-    clientSecret: "jtsRGWIYksAq2BHIgtaEaBlK",
-    callbackURL: "http://localhost:3000/auth/google/tests",
+    clientID:     "695366370115-rsfpsom023e7v3e31tq1kk34bqevnu5i.apps.googleusercontent.com",
+    clientSecret: "FojuirZ9IJdFwzMykk9w96u_",
+    callbackURL: "https://stark-caverns-47144.herokuapp.com/auth/google/profile",
     profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -269,6 +271,6 @@ app.post("/submit",function(req,res){
     }
   })
 })
-app.listen(3000, function() {
-  console.log("Server started on port 3000.");
+const server = app.listen(port,function(){
+  console.log("Server listening on port " + port);
 });
