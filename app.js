@@ -157,25 +157,21 @@ app.get('/logout', function(req, res) {
 
 
 
+    //
+    // const postSchema = new mongoose.Schema({
+    //    title:String,
+    //    content:String,
+    //  })
+    //  const Post = mongoose.model("post",postSchema);
 
-    const postSchema = new mongoose.Schema({
-       title:String,
-       content:String,
-     })
-     // const Post = mongoose.model("post",postSchema);
-
-     // let posts = [];
+      let posts = [];
 
      app.get("/", function(req, res){
          Post.find({},function(err,foundPost){
-           if(err){
-             res.render("home",{startingContent: homeStartingContent,post: ""});
-           }else{
-              res.render("home",{startingContent: homeStartingContent,post: foundPost});
-           }
-         )
-         });
+           res.render("home",{startingContent: homeStartingContent,post: posts});
+         })
 
+     });
 
     app.get("/about", function(req, res){
       res.render("about", {aboutContent: aboutContent});
@@ -194,7 +190,7 @@ app.get('/logout', function(req, res) {
     const nameBody = req.body.postBody;
     console.log(nameTitle)
     console.log(nameBody)
-    const newPost = Post({
+    const newPost = posts({
       title:nameTitle,
       content:nameBody,
     })
