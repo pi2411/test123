@@ -204,7 +204,12 @@ app.get('/logout', function(req, res) {
     const namePost = req.params.postName;
     console.log(namePost);
       Post.findOne({title: namePost}, function(err, post){
-        res.render("post", {title: post.title,content: post.content,});
+        if( post === '' || null){
+            res.render("post", {title: "",content: "",});
+        }else{
+            res.render("post", {title: post.title,content: post.content,});
+        }
+
       });
     });
 
