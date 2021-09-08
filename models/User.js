@@ -15,14 +15,14 @@ const userSchema = new mongoose.Schema({
   gender:String,
   pic:String,
 });
-const postSchema = new mongoose.Schema({
-  title:String,
-  content:String,
-})
+// const postSchema = new mongoose.Schema({
+//   title:String,
+//   content:String,
+// })
 
 
 userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
-postSchema.plugin(findOrCreate);
+// postSchema.plugin(findOrCreate);
 module.exports = mongoose.model("user",userSchema);
-module.exports = mongoose.model("post",postSchema);
+// module.exports = mongoose.model("post",postSchema);
