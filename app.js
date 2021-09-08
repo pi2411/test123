@@ -257,32 +257,32 @@ app.get("/logout",function(req,res){
   req.logout();
   res.render("/");
 })
-app.get("/submit",function(req,res){
-  if(req.isAuthenticated()){
-    res.render("submit");
-  }else{
-    res.redirect("/login");
-  }
-})
-app.post("/submit",function(req,res){
-  const submititSecrets = req.body.secret;
-  // console.log(submititSecrets);
-   console.log(req.user.id);
-  User.findById(req.user.id,function(err,foundScrets){
-    if(err){
-      console.log(err);
-    }else{
-      if(foundScrets){
-        foundScrets.secret = submititSecrets;
-        foundScrets.save(function(err){
-          if(!err){
-            res.redirect("/profile");
-          }
-        })
-      }
-    }
-  })
-})
+// app.get("/submit",function(req,res){
+//   if(req.isAuthenticated()){
+//     res.render("submit");
+//   }else{
+//     res.redirect("/login");
+//   }
+// })
+// app.post("/submit",function(req,res){
+//   const submititSecrets = req.body.secret;
+//   // console.log(submititSecrets);
+//    console.log(req.user.id);
+//   User.findById(req.user.id,function(err,foundScrets){
+//     if(err){
+//       console.log(err);
+//     }else{
+//       if(foundScrets){
+//         foundScrets.secret = submititSecrets;
+//         foundScrets.save(function(err){
+//           if(!err){
+//             res.redirect("/profile");
+//           }
+//         })
+//       }
+//     }
+//   })
+// })
 const server = app.listen(port,function(){
   console.log("Server listening on port " + port);
 });
