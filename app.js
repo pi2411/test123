@@ -162,7 +162,7 @@ app.get('/logout', function(req, res) {
        title:String,
        content:String,
      })
-     const Post = mongoose.model("post",postSchema);
+     const Post = require("./models/User");
 
      // let posts = [];
 
