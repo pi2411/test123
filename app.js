@@ -38,40 +38,24 @@ passport.use(new GoogleStrategy({
     clientID:     process.env.CLINET_ID,
     clientSecret: process.env.CLINTE_SECRET,
     callbackURL: "https://stark-caverns-47144.herokuapp.com/auth/google/profile",
-    // profileFields   : ['id','displayName','name','gender','picture.type(large)','email'],
-     passReqToCallback   : true,
+    profileFields   : ['id','displayName','name','gender','picture','email'],
   },
+  function(accessToken, refreshToken, profile, cb) {
+         User.findOrCreate({uid: profile.id}, function (err, user) {
+           console.log('A new uxer from "%s" was inserted', user.uid);
+           if(user){
+             user.pic = profile.photos[0].value;
+             user.token=accessToken,
+             user.username= profile.emails[0].value;
+             user.email= profile.emails[0].value,
+             user.name=profile.name.givenName + ' ' + profile.name.familyName,
+             user.save();
+             return cb(err, user);
+           }
 
-  function(request, accessToken, refreshToken, profile, done) {
-    User.findOrCreate({ uid: profile.id }, function (err, user) {
-      if(user){
-        user.pic = profile.photos[0].value;
-        user.token=accessToken,
-        user.username= profile.emails[0].value;
-        user.email= profile.emails[0].value,
-        user.name=profile.name.givenName + ' ' + profile.name.familyName,
-        user.save();
-        return cb(err, user);
-      }
-    });
-  }
+         });
+     }
 ));
-//   function(accessToken, refreshToken, profile, cb) {
-//          User.findOrCreate({uid: profile.id}, function (err, user) {
-//            console.log('A new uxer from "%s" was inserted', user.uid);
-//            if(user){
-//              user.pic = profile.photos[0].value;
-//              user.token=accessToken,
-//              user.username= profile.emails[0].value;
-//              user.email= profile.emails[0].value,
-//              user.name=profile.name.givenName + ' ' + profile.name.familyName,
-//              user.save();
-//              return cb(err, user);
-//            }
-//
-//          });
-//      }
-// ));
 
 
 passport.use(new facebookStrategy({
