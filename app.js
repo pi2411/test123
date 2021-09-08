@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 const User = require("./models/User");
-// const Post = require("./models/User");
+const Post = require("./models/User");
 passport.use(new GoogleStrategy({
     clientID:     process.env.CLINET_ID,
     clientSecret: process.env.CLINTE_SECRET,
@@ -115,11 +115,9 @@ passport.deserializeUser(function(id, done) {
 
 app.get('/profile', isLoggedIn, function(req, res) {
     console.log(req.user)
-    // res.json({
-    //     message:"You have accessed the protected endpoint!",
-    //     yourUserInfo : req.user,
-    //   });
-    res.render('profile', {user : req.user // get the user out of session and pass to template
+    res.json({
+        message:"You have accessed the protected endpoint!",
+        yourUserInfo : req.user,
       });
 });
 
@@ -158,20 +156,14 @@ app.get('/logout', function(req, res) {
 
 
 
-    // const postSchema = new mongoose.Schema({
-    //    title:String,
-    //    content:String,
-    //  })
-     const Post = require("./models/User");
+    // let posts = [];
 
-     // let posts = [];
+    app.get("/", function(req, res){
+        Post.find({},function(err,foundPost){
+          res.render("home",{startingContent: homeStartingContent,post: foundPost});
+        })
 
-     app.get("/", function(req, res){
-         Post.find({},function(err,foundPost){
-           res.render("home",{startingContent: homeStartingContent,post:foundPost});
-         })
-
-     });
+    });
 
     app.get("/about", function(req, res){
       res.render("about", {aboutContent: aboutContent});
