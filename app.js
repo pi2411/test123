@@ -164,7 +164,12 @@ app.get('/logout', function(req, res) {
     //  })
     //  const Post = mongoose.model("post",postSchema);
 
-      let posts = [];
+      let posts = [
+        {
+          title:"",
+          content:""
+        }
+      ];
 
      app.get("/", function(req, res){
          Post.find({},function(err,foundPost){
