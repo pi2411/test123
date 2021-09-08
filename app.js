@@ -161,13 +161,10 @@ app.get('/logout', function(req, res) {
     // let posts = [];
 
   app.get("/", function(req, res){
-    Post.findOne({title: namePost}, function(err, post){
-      res.render("/", {title: post.title,content: post.content,});
-    });
-    // res.render("home", {
-    //   startingContent: homeStartingContent,
-    //   posts: Post
-    //   });
+    res.render("home", {
+      startingContent: homeStartingContent,
+      posts: newPost
+      });
   });
 
     app.get("/about", function(req, res){
