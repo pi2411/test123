@@ -134,7 +134,7 @@ function isLoggedIn(req, res, next) {
     res.redirect('/');
 }
 app.get('/auth/google',
-  passport.authenticate('google', { scope:["profile","email"] }
+  passport.authenticate('google', { scope:["email"] }
 ));
 app.get("/auth/google/profile",
     passport.authenticate( "google", {
