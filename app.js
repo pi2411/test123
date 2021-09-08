@@ -38,10 +38,10 @@ passport.use(new GoogleStrategy({
     clientID:     process.env.CLINET_ID,
     clientSecret: process.env.CLINTE_SECRET,
     callbackURL: "https://stark-caverns-47144.herokuapp.com/auth/google/profile",
-    profileFields   : ['id','displayName','name','gender','picture.type(large)','email'],
+    // profileFields   : ['id','displayName','name','gender','picture.type(large)','email'],
     passReqToCallback   : true
   },
-  function(accessToken, refreshToken, profile, cb) {
+  function(request,accessToken, refreshToken, profile, cb) {
          User.findOrCreate({uid: profile.id}, function (err, user) {
            console.log('A new uxer from "%s" was inserted', user.uid);
            if(user){
