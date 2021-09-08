@@ -158,7 +158,7 @@ app.get('/logout', function(req, res) {
 
 
 
-    let posts = [];
+    let posts = Post[];
 
   app.get("/", function(req, res){
     res.render("home", {
