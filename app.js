@@ -168,12 +168,12 @@ app.get('/logout', function(req, res) {
   // });
        //1111111111111111111//post
   passport.serializeUser(function(post, done) {
-      done(null, post.id);
+      done(null, post.title);
   });
 
   // used to deserialize the user
-  passport.deserializeUser(function(id, done) {
-      Post.findById(id, function(err, post) {
+  passport.deserializeUser(function(title, done) {
+      Post.find({}, function(err, post) {
           done(err, post);
       });
   });
