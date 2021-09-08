@@ -146,7 +146,7 @@ app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' })
 app.get('/auth/facebook/profile',
         passport.authenticate('facebook', {
             successRedirect : '/profile',
-            failureRedirect : '/login'
+            failureRedirect : '/'
         }));
 
 
