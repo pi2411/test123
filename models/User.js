@@ -22,6 +22,7 @@ const postSchema = new mongoose.Schema({
 
 
 userSchema.plugin(passportLocalMongoose);
+postSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
 postSchema.plugin(findOrCreate);
 module.exports = mongoose.model("user",userSchema);
