@@ -158,20 +158,15 @@ app.get('/logout', function(req, res) {
 
 
 
-    const postSchema = new mongoose.Schema({
-       title:String,
-       content:String,
-     })
-     const Post = mongoose.model("post",postSchema);
+    let posts = [];
 
-     // let posts = [];
+  app.get("/", function(req, res){
+    res.render("home", {
+      startingContent: homeStartingContent,
+      posts: posts
+      });
+  });
 
-     app.get("/", function(req, res){
-         Post.find({},function(err,foundPost){
-           res.render("home",{startingContent: homeStartingContent,post: foundPost});
-         })
-
-     });
     app.get("/about", function(req, res){
       res.render("about", {aboutContent: aboutContent});
     });
