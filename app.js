@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 const User = require("./models/User");
-// const Post = require("./models/User");
+const Post = require("./models/User");
 passport.use(new GoogleStrategy({
     clientID:     process.env.CLINET_ID,
     clientSecret: process.env.CLINTE_SECRET,
@@ -162,7 +162,7 @@ app.get('/logout', function(req, res) {
        title:String,
        content:String,
      })
-     const Post = require("./models/User");
+     const Post = mongoose.model("post",postSchema);
 
      // let posts = [];
 
