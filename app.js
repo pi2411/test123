@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 const User = require("./models/User");
-const Post = require("./models/User");
+// const Post = require("./models/User");
 passport.use(new GoogleStrategy({
     clientID:     process.env.CLINET_ID,
     clientSecret: process.env.CLINTE_SECRET,
@@ -158,31 +158,20 @@ app.get('/logout', function(req, res) {
 
 
 
-  //   let posts = [];
-  //
-  // app.get("/", function(req, res){
-  //   res.render("home", {
-  //     startingContent: homeStartingContent,
-  //     posts: posts
-  //     });
-  // });
-       //1111111111111111111//post
-  passport.serializeUser(function(post, done) {
-      done(null, post.title);
-  });
+    const postSchema = new mongoose.Schema({
+       title:String,
+       content:String,
+     })
+     const Post = require("./models/User");
 
-  // used to deserialize the user
-  passport.deserializeUser(function(title, done) {
-      Post.find({}, function(err, post) {
-          done(err, post);
-      });
-  });
-  app.get("/", function(req, res){
-       Post.find({},function(err,foundPost){
-         res.render("home",{startingContent: homeStartingContent,posts: foundPost});
-       })
+     // let posts = [];
 
-   });
+     app.get("/", function(req, res){
+         Post.find({},function(err,foundPost){
+           res.render("home",{startingContent: homeStartingContent,post: foundPost});
+         })
+
+     });
 
     app.get("/about", function(req, res){
       res.render("about", {aboutContent: aboutContent});
