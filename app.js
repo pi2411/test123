@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 const User = require("./models/User");
-const Post = require("./models/Post");
+const Post = require("./models/User");
 passport.use(new GoogleStrategy({
     clientID:     process.env.CLINET_ID,
     clientSecret: process.env.CLINTE_SECRET,
