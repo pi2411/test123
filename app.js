@@ -168,7 +168,7 @@ app.get('/logout', function(req, res) {
 
      app.get("/", function(req, res){
          Post.find({},function(err,foundPost){
-           if( foundPost === '' || null){
+           if( foundPost ===  null){
                res.render("home", {startingContent: homeStartingContent,post: "",});
            }else{
              res.render("home",{startingContent: homeStartingContent,post: foundPost});
