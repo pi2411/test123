@@ -158,10 +158,10 @@ app.get('/logout', function(req, res) {
 
 
 
-    const postSchema = new mongoose.Schema({
-       title:String,
-       content:String,
-     })
+    // const postSchema = new mongoose.Schema({
+    //    title:String,
+    //    content:String,
+    //  })
      const Post = require("./models/User");
 
      // let posts = [];
