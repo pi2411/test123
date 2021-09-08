@@ -166,6 +166,17 @@ app.get('/logout', function(req, res) {
   //     posts: posts
   //     });
   // });
+       //1111111111111111111//post
+  passport.serializeUser(function(post, done) {
+      done(null, post.id);
+  });
+
+  // used to deserialize the user
+  passport.deserializeUser(function(id, done) {
+      Post.findById(id, function(err, post) {
+          done(err, post);
+      });
+  });
   app.get("/", function(req, res){
        Post.find({},function(err,foundPost){
          res.render("home",{startingContent: homeStartingContent,posts: foundPost});
