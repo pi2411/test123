@@ -168,8 +168,12 @@ app.get('/logout', function(req, res) {
 
      app.get("/", function(req, res){
          Post.find({},function(err,foundPost){
-           res.render("home",{startingContent: homeStartingContent,post: foundPost});
-         })
+           if( foundPost === '' || null){
+               res.render("home", {startingContent: homeStartingContent,post: "",});
+           }else{
+             res.render("home",{startingContent: homeStartingContent,post: foundPost});
+           })
+
 
      });
 
@@ -204,12 +208,7 @@ app.get('/logout', function(req, res) {
     const namePost = req.params.postName;
     console.log(namePost);
       Post.findOne({title: namePost}, function(err, post){
-        if( post === '' || null){
-            res.render("post", {title: "",content: "",});
-        }else{
-            res.render("post", {title: post.title,content: post.content,});
-        }
-
+        res.render("post", {title: post.title,content: post.content,});
       });
     });
 
