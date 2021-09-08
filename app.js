@@ -61,9 +61,9 @@ passport.use(new GoogleStrategy({
 passport.use(new facebookStrategy({
 
     // pull in our app id and secret from our auth.js file
-    clientID        : "357939236043170",
-    clientSecret    : "8fc3ca87e980e5d60bf16952cd5970b7",
-    callbackURL     : "http://localhost:3000/auth/facebook/profile",
+    clientID        : process.env.CLINTE_ID_FB,
+    clientSecret    : process.env.CLINET_SECRET_FB,
+    callbackURL     : "https://stark-caverns-47144.herokuapp.com/auth/facebook/profile",
   profileFields   : ['id','displayName','name','gender','picture.type(large)','email']
 
 },
