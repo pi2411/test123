@@ -164,10 +164,10 @@ app.get('/logout', function(req, res) {
     //  })
 
      // const Post = mongoose.model("post",postSchema);
-      const new1 = Post({
-        title:"",
-        content:"1"
-      })
+      // const new1 = Post({
+      //   title:"",
+      //   content:"1"
+      // })
      // let posts = [];
 
      app.get("/", function(req, res){
