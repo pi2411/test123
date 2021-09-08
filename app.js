@@ -246,13 +246,13 @@ app.post("/register",function(req,res){
     }
   })
 })
-app.get("/profile",function(req,res){
-  User.find({"secret":{$ne:null}},function(err,user){
-    if(!err){
-      res.render("profile",{usersSecrets:user})
-    }
-  })
-})
+// app.get("/profile",function(req,res){
+//   User.find({"secret":{$ne:null}},function(err,user){
+//     if(!err){
+//       res.render("profile",{usersSecrets:user})
+//     }
+//   })
+// })
 app.get("/logout",function(req,res){
   req.logout();
   res.render("/");
