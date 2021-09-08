@@ -157,8 +157,12 @@ app.get('/logout', function(req, res) {
 
 
 
+    const postSchema = new mongoose.Schema({
+      title:String,
+      content:String,
+    })
 
-    let posts = Post[];
+    const posts = mongoose.model("post",postSchema);
 
   app.get("/", function(req, res){
     res.render("home", {
