@@ -55,11 +55,11 @@ html {
 }
 
 .foot li a {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   background-color: #fff;
-  text-align: center;
-  line-height: 80px;
+  text-align: right;
+  line-height: 40px;
   font-size: 35px;
   margin: 0 10px;
   display: block;
