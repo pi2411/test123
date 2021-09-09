@@ -5,7 +5,9 @@
   <%  posts.forEach(function(post){ %>
     <section class="head">
         <p>
-         <a href="/posts/<%=post.title%>" data-bf=<%=post.title%> data-af=<%=post.content.substring(0, 100) + " ..."%>></a>
+         <a href="/posts/<%=post.title%>"
+          data-bf=<%=post.title%>
+          data-af=<%=post.content.substring(0, 100) + " ..."%>>Read More</a>
         </p>
   </section>
 
