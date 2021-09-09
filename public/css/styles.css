@@ -44,9 +44,9 @@ html {
 
 .foot {
   display: flex;
-  position: left;
+  position: absolute;
   top: 50%;
-  left: 50%;
+  left: 150%;
   transform: translate(-50%, -50%);
 }
 
