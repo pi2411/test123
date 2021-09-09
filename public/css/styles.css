@@ -124,8 +124,8 @@ section.head a {
   height: 78px;
   line-height: 78px;
   position: absolute;
-  top: 100%;
-  left: 20%;
+  top: 50%;
+  left: 50%;
   margin-left: -326px;
   margin-top: -39px;
   font-weight: 200;
@@ -147,14 +147,14 @@ section.head a:before, section.head a:after {
 section.head a:before {
   content: attr(data-bf);
   position: absolute;
-  top: -5px;
+  top: -45px;
   left: -5px;
 }
 section.head a:after {
   content: attr(data-af);
   position: absolute;
   right: 0;
-  bottom: +5px;
+  bottom: -30px;
 }
 section.head a:hover {
   -webkit-transform: scale(1.05);
@@ -177,7 +177,6 @@ section.head a:hover:after {
   -o-transform: scale(1.2) translate(25px, 15px);
   transform: scale(1.2) translate(25px, 15px);
 }
-
 
 
 section.p19 {
