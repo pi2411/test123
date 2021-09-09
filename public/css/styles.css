@@ -147,8 +147,8 @@ section.head a:before, section.head a:after {
 section.head a:before {
   content: attr(data-bf);
   position: absolute;
-  top: -45px;
-  left: -5px;
+  top: +45px;
+  left: +5px;
 }
 section.head a:after {
   content: attr(data-af);
@@ -164,11 +164,11 @@ section.head a:hover {
   transform: scale(1.05);
 }
 section.head a:hover:before {
-  -webkit-transform: scale(1.2) translate(-25px, -15px);
-  -moz-transform: scale(1.2) translate(-25px, -15px);
-  -ms-transform: scale(1.2) translate(-25px, -15px);
-  -o-transform: scale(1.2) translate(-25px, -15px);
-  transform: scale(1.2) translate(-25px, -15px);
+  -webkit-transform: scale(1.2) translate(+25px, +15px);
+  -moz-transform: scale(1.2) translate(+25px, +15px);
+  -ms-transform: scale(1.2) translate(+25px, +15px);
+  -o-transform: scale(1.2) translate(+25px, +15px);
+  transform: scale(1.2) translate(+25px, +15px);
 }
 section.head a:hover:after {
   -webkit-transform: scale(1.2) translate(25px, 15px);
