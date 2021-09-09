@@ -202,6 +202,7 @@ section.head a:hover:after {
   transform: scale(1.2) translate(25px, 15px);
 }
 section.p19 {
+  position: fixed;
   font-family: "starjedi_special_edition";
 }
 section.p19 a {
