@@ -212,6 +212,13 @@ section.head a:hover:after {
 section.p19 {
   font-family: "starjedi_special_edition";
 }
+section.p19  #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
 section.p19 a {
   width: 330px;
   height: 55px;
