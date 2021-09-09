@@ -213,22 +213,6 @@ section.p19 {
   bottom: 0;
   z-index: -1;
 }
-
-/* page content */
-h1, h2 {
-  color: white;
-  font-family: Trebuchet MS;
-  font-weight: bold;
-  text-align: center;
-}
-
-h1 {
-  font-size: 6rem;
-  margin-top: 30vh;
-}
-
-h2 { font-size: 3rem; }
-
 @media (max-width: 750px) {
     #background-video { display: none; }
     body {
