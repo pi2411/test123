@@ -213,11 +213,15 @@ section.p19 {
   font-family: "starjedi_special_edition";
 }
 section.p19  #myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+  width: 330px;
+  height: 55px;
+  line-height: 55px;
+  position: absolute;
+  top: 42.5%;
+  left: 2%;
+  margin-left: -165px;
+  margin-top: -27.5px;
+  font-weight: lighter;
 }
 section.p19 a {
   width: 330px;
