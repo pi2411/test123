@@ -202,9 +202,41 @@ section.head a:hover:after {
   transform: scale(1.2) translate(25px, 15px);
 }
 section.p19 {
-  background-image: url("//images.pexels.com/photos/4813347/pexels-photo-4813347.jpeg?cs=srgb&dl=pexels-cottonbro-4813347.jpg&fm=jpg");
-  font-family: "starjedi_special_edition";
+  #background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
+
+/* page content */
+h1, h2 {
+  color: white;
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+  margin-top: 30vh;
+}
+
+h2 { font-size: 3rem; }
+
+@media (max-width: 750px) {
+    #background-video { display: none; }
+    body {
+      background: url("https://www.pexels.com/video/a-mother-holding-her-son-happily-6743272/") no-repeat;
+      background-size: cover;
+    }
+}
+
 section.p19 a {
   width: 330px;
   height: 55px;
