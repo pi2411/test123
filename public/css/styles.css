@@ -8,6 +8,8 @@ html {
     padding-bottom: 70px;
 }
 .navbar {
+    width: 140px;
+    height: 140px;
     padding-top: 15px;
     padding-bottom: 15px;
     border: 0;
