@@ -173,7 +173,7 @@ app.get('/logout', function(req, res) {
 
      app.get("/", function(req, res){
          Post.find({},function(err,foundPost){
-           res.render("home",{startingContent: homeStartingContent,post: foundPost});
+           res.render("home",{startingContent: homeStartingContent,posts: foundPost});
          })
 
      });
