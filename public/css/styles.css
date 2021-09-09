@@ -7,22 +7,7 @@ html {
     padding-top: 70px;
     padding-bottom: 70px;
 }
-.navbar {
-    width: 90%;
-    height: 20%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
-}
-.navbar-nav  li a:hover {
-  width: 90%;
-  height: 20%;
-    color: #1abc9c !important;
-}
+
 
 .footer-padding {
 	padding-bottom: 60px;
@@ -208,6 +193,22 @@ section.head a:hover:after {
 section.p19 {
   background-image: url("//images.pexels.com/photos/1532771/pexels-photo-1532771.jpeg?cs=srgb&dl=pexels-anand-dandekar-1532771.jpg&fm=jpg");
   font-family: "starjedi_special_edition";
+}
+section.p19 .navbar {
+    width: 90%;
+    height: 20%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+section.p19 .navbar-nav  li a:hover {
+  width: 90%;
+  height: 20%;
+    color: #1abc9c !important;
 }
 section.p19 a {
   width: 330px;
