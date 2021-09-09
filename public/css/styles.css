@@ -113,582 +113,153 @@ html {
 .foot li:nth-child(4) a:before {
   background: #dd4b39;
 }
-
-
-@import "bourbon";
-
-@import url(https://fonts.googleapis.com/css?family=Martel+Sans:200,300,400,800,900);
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+section.p19 {
+  background-image: url("//caraujo_pens.surge.sh/images/JXtviCi.jpg");
+  font-family: "starjedi_special_edition";
 }
-@mixin abstlycenter($w, $h) {
+section.p19 a {
+  width: 330px;
+  height: 55px;
+  line-height: 55px;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -($w * 0.5);
-  margin-top: -($h * 0.5);
+  margin-left: -165px;
+  margin-top: -27.5px;
+  font-weight: lighter;
 }
-
-@mixin a($width, $height: 55px) {
-  width: $width;
-  height: $height;
-  line-height: $height;
-  @include abstlycenter($width, $height);
+section.p19 a:before, section.p19 a:after {
+  content: "";
+  position: absolute;
+  width: 13%;
+  height: 13px;
+  background-color: #000;
+  -webkit-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+  -moz-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+  transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+  opacity: 0;
 }
-
-@mixin clip($string) {
-  -webkit-clip-path: $string;
-  clip-path: $string;
+section.p19 a:before {
+  top: -20px;
+  right: 0;
 }
-@mixin grab {
+section.p19 a:after {
+  bottom: -35px;
+  left: 0;
+}
+section.p19 a .s1 {
+  position: absolute;
+  background-color: #26c9ff;
+  width: 0;
+  height: 13px;
+  top: -20px;
+  box-shadow: 0px 0px 0px #26c9ff;
+  right: 13%;
+  border-radius: 20px 10px 10px 20px;
+  -webkit-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+  -moz-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+  transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+}
+section.p19 a .s1:before {
+  content: "";
   position: absolute;
   left: 0;
+  top: -1%;
   right: 0;
+  bottom: -15%;
+  box-shadow: 0px 0px 0px #26c9ff;
+  border-radius: 20px 10px 10px 20px;
+}
+section.p19 a .s1:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0%;
   top: 0;
   bottom: 0;
+  background-color: #ffffff;
+  -webkit-filter: blur(3px);
+  filter: blur(1px);
+  box-shadow: inset 0px 0px 10px #26c9ff;
+  border-radius: 20px 10px 10px 20px;
 }
-// keyframes mixin
-@mixin keyframe($name) {
-  @-webkit-keyframes #{$name} {
-    @content;
-  }
-  @-moz-keyframes #{$name} {
-    @content;
-  }
-  @-ms-keyframes #{$name} {
-    @content;
-  }
-  @keyframes #{$name} {
-    @content;
-  }
+section.p19 a .s2 {
+  position: absolute;
+  background-color: #ff0000;
+  width: 0;
+  height: 13px;
+  bottom: -35px;
+  box-shadow: 0px 0px 0px #ff0000;
+  left: 13%;
+  border-radius: 10px 20px 20px 10px;
+  z-index: 1000;
+  -webkit-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+  -moz-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+  transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
 }
-
-body {
-  font: {
-    family: "Martel Sans", sans-serif;
-  }
-  background-color: #000;
+section.p19 a .s2:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1%;
+  right: 0;
+  bottom: -15%;
+  box-shadow: 0px 0px 0px #ff0000;
+  border-radius: 10px 20px 20px 10px;
 }
-$elipsea: 19px;
-section {
-  height: 350px;
-  width: 94%;
-  box-shadow: 0px 0px 146px 21px rgba(0, 0, 0, 0.75);
-  background : {
-    color: #000;
-    repeat: no-repeat;
-    size: cover;
-    position: center center;
-  }
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  margin: 0 auto 0px;
-  a {
-    text: {
-      transform: uppercase;
-      align: center;
-      decoration: none;
-    }
-    font: {
-      size: 4.875em;
-      weight: 900;
-    }
-    color: #fff;
-    &:after,
-    &:before {
-      content: "";
-    }
-  }
-  &:nth-child(2n + 1) {
-  }
-  &.head {
-    background-color: #fff;
-    position: relative;
-    z-index: 10;
-    a {
-      $w: 652px;
-      $h: 78px;
-      @include a($w, $h);
-      font-weight: 200;
-      color: #bababa;
-      @include transition(all 2s cubic-bezier(0.21, 1, 0.84, 1.01));
-      &:before,
-      &:after {
-        color: #000;
-        font-weight: 900;
-        font-size: 30px;
-        text-transform: none;
-        display: block;
-        @include transition(inherit);
-      }
-      &:before {
-        content: attr(data-bf);
-        position: absolute;
-        top: -45px;
-        left: -5px;
-      }
-      &:after {
-        content: attr(data-af);
-        position: absolute;
-        right: 0;
-        bottom: -30px;
-      }
-      &:hover {
-        @include transform(scale(1.05));
-        &:before {
-          @include transform(scale(1.2) translate(-25px, -15px));
-        }
-        &:after {
-          @include transform(scale(1.2) translate(25px, 15px));
-        }
-      }
-    }
-  }
-  &.p19 {
-    background-image: url($image10);
-    font-family: "starjedi_special_edition";
-
-    a {
-      $w: 330px;
-      $h: 55px;
-      @include a($w, $h);
-      font-weight: lighter;
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        width: 13%;
-        height: 13px;
-        background-color: #000;
-        @include transition(all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97));
-        opacity: 0;
-      }
-      &:before {
-        top: -20px;
-        right: 0;
-      }
-      &:after {
-        bottom: -35px;
-        left: 0;
-      }
-      .s1 {
-        position: absolute;
-        background-color: #26c9ff;
-        width: 0;
-        height: 13px;
-        top: -20px;
-        box-shadow: 0px 0px 0px #26c9ff;
-        right: 13%;
-        border-radius: 20px 10px 10px 20px;
-        @include transition(all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97));
-        &:before {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: -1%;
-          right: 0;
-          bottom: -15%;
-          box-shadow: 0px 0px 0px #26c9ff;
-          border-radius: 20px 10px 10px 20px;
-        }
-        &:after {
-          content: "";
-          position: absolute;
-          right: 0;
-          left: 0%;
-          top: 0;
-          bottom: 0;
-          background-color: #ffffff;
-          -webkit-filter: blur(3px);
-          filter: blur(1px);
-          box-shadow: inset 0px 0px 10px #26c9ff;
-          border-radius: 20px 10px 10px 20px;
-        }
-      }
-      .s2 {
-        position: absolute;
-        background-color: #ff0000;
-        width: 0;
-        height: 13px;
-        bottom: -35px;
-        box-shadow: 0px 0px 0px #ff0000;
-        left: 13%;
-        border-radius: 10px 20px 20px 10px;
-        z-index: 1000;
-        @include transition(all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97));
-        &:before {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: -1%;
-          right: 0;
-          bottom: -15%;
-          box-shadow: 0px 0px 0px #ff0000;
-          border-radius: 10px 20px 20px 10px;
-        }
-        &:after {
-          content: "";
-          position: absolute;
-          right: 0;
-          left: 0%;
-          top: 0;
-          bottom: 0;
-          background-color: #ffffff;
-          -webkit-filter: blur(3px);
-          filter: blur(1px);
-          box-shadow: inset 0px 0px 10px #ff0000;
-          border-radius: 10px 20px 20px 10px;
-        }
-      }
-      &:hover {
-        &:before {
-          opacity: 1;
-        }
-        &:after {
-          opacity: 1;
-        }
-        .s1 {
-          width: 87%;
-          box-shadow: 0px 0px 30px #26c9ff;
-          top: -20px;
-          &:before {
-            box-shadow: 0px 0px 70px #26c9ff;
-          }
-        }
-        .s2 {
-          width: 87%;
-          box-shadow: 0px 0px 30px #ff0000;
-          bottom: -35px;
-          &:before {
-            box-shadow: 0px 0px 70px #ff0000;
-          }
-        }
-      }
-    }
-  }
+section.p19 a .s2:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0%;
+  top: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  -webkit-filter: blur(3px);
+  filter: blur(1px);
+  box-shadow: inset 0px 0px 10px #ff0000;
+  border-radius: 10px 20px 20px 10px;
+}
+section.p19 a:hover:before {
+  opacity: 1;
+}
+section.p19 a:hover:after {
+  opacity: 1;
+}
+section.p19 a:hover .s1 {
+  width: 87%;
+  box-shadow: 0px 0px 30px #26c9ff;
+  top: -20px;
+}
+section.p19 a:hover .s1:before {
+  box-shadow: 0px 0px 70px #26c9ff;
+}
+section.p19 a:hover .s2 {
+  width: 87%;
+  box-shadow: 0px 0px 30px #ff0000;
+  bottom: -35px;
+}
+section.p19 a:hover .s2:before {
+  box-shadow: 0px 0px 70px #ff0000;
 }
 
-@include keyframes(voavoa) {
+@-webkit-keyframes voavoa {
   from {
-    @include clip(polygon(0 35%, 100% 43%, 100% 100%));
+    -webkit-clip-path: polygon(0 35%, 100% 43%, 100% 100%);
+    clip-path: polygon(0 35%, 100% 43%, 100% 100%);
   }
   to {
-    @include clip(polygon(13% 0, 100% 43%, 100% 100%));
+    -webkit-clip-path: polygon(13% 0, 100% 43%, 100% 100%);
+    clip-path: polygon(13% 0, 100% 43%, 100% 100%);
   }
 }
-@include keyframes(voavoa2) {
+@-moz-keyframes voavoa {
   from {
-    @include clip(polygon(13% 0, 100% 43%, 100% 100%));
+    -webkit-clip-path: polygon(0 35%, 100% 43%, 100% 100%);
+    clip-path: polygon(0 35%, 100% 43%, 100% 100%);
   }
   to {
-    @include clip(polygon(0 45%, 100% 43%, 100% 100%));
-  }
-}
-@include keyframes(rodarodajequiti) {
-  from {
-    @include transform(rotate(0));
-  }
-  to {
-    @include transform(rotate(360deg));
-  }
-}
-@include keyframes(chicaum) {
-  from {
-    @include transform(translate(0px));
-  }
-  to {
-    @include transform(translate(-886px));
-  }
-}
-@include keyframes(chicadois) {
-  from {
-    @include transform(translate(0px));
-  }
-  to {
-    @include transform(translate(-841px));
-  }
-}
-@include keyframes(montanhaDaAlegria) {
-  0% {
-    @include clip(
-      polygon(
-        0% 100%,
-        159px 188px,
-        171px 185px,
-        174px 185px,
-        184px 182px,
-        191px 183px,
-        199px 179px,
-        202px 176px,
-        219px 158px,
-        225px 175px,
-        230px 172px,
-        245px 179px,
-        283px 184px,
-        293px 187px,
-        311px 192px,
-        318px 191px,
-        357px 194px,
-        100% 100%
-      )
-    );
-  }
-  25% {
-    @include clip(
-      polygon(
-        0% 100%,
-        153px 176px,
-        165px 174px,
-        167px 173px,
-        187px 155px,
-        193px 161px,
-        200px 147px,
-        203px 149px,
-        220px 129px,
-        226px 143px,
-        231px 140px,
-        240px 154px,
-        246px 147px,
-        285px 171px,
-        295px 174px,
-        313px 178px,
-        329px 182px,
-        100% 100%
-      )
-    );
-  }
-  50% {
-    @include clip(
-      polygon(
-        0% 100%,
-        106px 149px,
-        145px 128px,
-        158px 119px,
-        178px 101px,
-        184px 107px,
-        190px 92px,
-        201px 87px,
-        217px 66px,
-        223px 81px,
-        228px 78px,
-        244px 94px,
-        251px 87px,
-        289px 113px,
-        302px 125px,
-        316px 140px,
-        346px 163px,
-        100% 100%
-      )
-    );
-  }
-  75% {
-    @include clip(
-      polygon(
-        0% 100%,
-        82px 132px,
-        117px 97px,
-        131px 93px,
-        172px 65px,
-        179px 76px,
-        185px 77px,
-        199px 68px,
-        217px 44px,
-        223px 58px,
-        228px 55px,
-        244px 60px,
-        253px 42px,
-        295px 79px,
-        314px 87px,
-        331px 88px,
-        376px 145px,
-        100% 100%
-      )
-    );
-  }
-  100% {
-    @include clip(
-      polygon(
-        0% 100%,
-        49px 99px,
-        100px 53px,
-        113px 68px,
-        147px 29px,
-        153px 40px,
-        160px 42px,
-        187px 63px,
-        209px 11px,
-        215px 25px,
-        219px 21px,
-        244px 61px,
-        264px 0px,
-        311px 60px,
-        330px 79px,
-        349px 65px,
-        398px 107px,
-        100% 100%
-      )
-    );
-  }
-}
-@include keyframes(montanhaDaTristeza) {
-  100% {
-    @include clip(
-      polygon(
-        0% 100%,
-        159px 188px,
-        171px 185px,
-        174px 185px,
-        184px 182px,
-        191px 183px,
-        199px 179px,
-        202px 176px,
-        219px 158px,
-        225px 175px,
-        230px 172px,
-        245px 179px,
-        283px 184px,
-        293px 187px,
-        311px 192px,
-        318px 191px,
-        357px 194px,
-        100% 100%
-      )
-    );
-  }
-  75% {
-    @include clip(
-      polygon(
-        0% 100%,
-        153px 176px,
-        165px 174px,
-        167px 173px,
-        187px 155px,
-        193px 161px,
-        200px 147px,
-        203px 149px,
-        220px 129px,
-        226px 143px,
-        231px 140px,
-        240px 154px,
-        246px 147px,
-        285px 171px,
-        295px 174px,
-        313px 178px,
-        329px 182px,
-        100% 100%
-      )
-    );
-  }
-  50% {
-    @include clip(
-      polygon(
-        0% 100%,
-        106px 149px,
-        145px 128px,
-        158px 119px,
-        178px 101px,
-        184px 107px,
-        190px 92px,
-        201px 87px,
-        217px 66px,
-        223px 81px,
-        228px 78px,
-        244px 94px,
-        251px 87px,
-        289px 113px,
-        302px 125px,
-        316px 140px,
-        346px 163px,
-        100% 100%
-      )
-    );
-  }
-  25% {
-    @include clip(
-      polygon(
-        0% 100%,
-        82px 132px,
-        117px 97px,
-        131px 93px,
-        172px 65px,
-        179px 76px,
-        185px 77px,
-        199px 68px,
-        217px 44px,
-        223px 58px,
-        228px 55px,
-        244px 60px,
-        253px 42px,
-        295px 79px,
-        314px 87px,
-        331px 88px,
-        376px 145px,
-        100% 100%
-      )
-    );
-  }
-  0% {
-    @include clip(
-      polygon(
-        0% 100%,
-        49px 99px,
-        100px 53px,
-        113px 68px,
-        147px 29px,
-        153px 40px,
-        160px 42px,
-        187px 63px,
-        209px 11px,
-        215px 25px,
-        219px 21px,
-        244px 61px,
-        264px 0px,
-        311px 60px,
-        330px 79px,
-        349px 65px,
-        398px 107px,
-        100% 100%
-      )
-    );
-  }
-}
-@include keyframes(sobeSol) {
-  0% {
-    width: 0px;
-    height: 0px;
-    @include abstlycenter(10px, 10px);
-    top: 300%;
-    opacity: 0;
-    @include filter(blur(30px));
-  }
-  15% {
-    width: 120px;
-    height: 120px;
-    @include abstlycenter(120px, 120px);
-    top: 240%;
-    opacity: 1;
-    @include filter(blur(20px));
-  }
-
-  100% {
-    width: 100px;
-    height: 100px;
-    @include abstlycenter(100px, 100px);
-    top: -300%;
-    opacity: 1;
-    @include filter(blur(20px));
-  }
-}
-@include keyframes(road) {
-  from {
-    background-position: 0;
-  }
-  to {
-    background-position: -330px;
+    -webkit-clip-path: polygon(13% 0, 100% 43%, 100% 100%);
+    clip-path: polygon(13% 0, 100% 43%, 100% 100%);
   }
 }
