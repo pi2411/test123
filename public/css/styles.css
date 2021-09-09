@@ -202,6 +202,7 @@ section.head a:hover:after {
   transform: scale(1.2) translate(25px, 15px);
 }
 section.p19 {
+  background-image: url("//images.pexels.com/photos/1532771/pexels-photo-1532771.jpeg?cs=srgb&dl=pexels-anand-dandekar-1532771.jpg&fm=jpg");
   font-family: "starjedi_special_edition";
 }
 section.p19 a {
