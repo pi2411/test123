@@ -5,13 +5,16 @@
     <p> <%= startingContent %> </p>
   <%  posts.forEach(function(post){ %>
 
-    <h1><%=post.title%></h1>
-    <p>
-    <%=post.content.substring(0, 100) + " ..."%>
-    <a href="/posts/<%=post.title%>">Read More</a>
-    </p>
+
     <section class="head">
-		<a href="" data-bf="10 Stunning" data-af="with sass">HOVER EFFECTS</a>
+		<a href="" data-bf="10 Stunning" data-af="with sass">
+      <h1><%=post.title%></h1>
+      <p>
+      <%=post.content.substring(0, 100) + " ..."%>
+      <a href="/posts/<%=post.title%>">Read More</a>
+      </p>
+
+    </a>
 	</section>
     <% }) %>
 
