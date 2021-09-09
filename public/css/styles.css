@@ -147,14 +147,14 @@ section.head a:before, section.head a:after {
 section.head a:before {
   content: attr(data-bf);
   position: absolute;
-  top: -45px;
+  top: -25px;
   left: -5px;
 }
 section.head a:after {
   content: attr(data-af);
   position: absolute;
   right: 0;
-  bottom: -30px;
+  bottom: -5px;
 }
 section.head a:hover {
   -webkit-transform: scale(1.05);
