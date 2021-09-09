@@ -147,7 +147,7 @@ section.head a:before, section.head a:after {
 section.head a:before {
   content: attr(data-bf);
   position: absolute;
-  top: -25px;
+  top: -10px;
   left: -5px;
 }
 section.head a:after {
