@@ -1,22 +1,19 @@
 
 <%- include("partials/header"); -%>
-    <h1>Home</h1>
-
+<section class="p19">
+<a href=""><h1>Home</h1>
+  <div class="s1"></div>
+  <div class="s2"></div>
+</a>
+</section>
     <p> <%= startingContent %> </p>
-
-
   <%  posts.forEach(function(post){ %>
 
     <h1><%=post.title%></h1>
-
-      <section class="p19">
-          <%=post.content.substring(0, 100) + " ..."%>
-          <a href="/posts/<%=post.title%>">Read More
-            <div class="s1"></div>
-            <div class="s2"></div>
-          </a>
-  	</section>
-
+    <p>
+    <%=post.content.substring(0, 100) + " ..."%>
+    <a href="/posts/<%=post.title%>">Read More</a>
+    </p>
     <% }) %>
 
 
