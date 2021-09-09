@@ -206,7 +206,7 @@ section.p19 {
   font-family: "starjedi_special_edition";
 }
 section.p19 a {
-  width: 330px;
+  width: 100%;
   height: 55px;
   line-height: 55px;
   position: absolute;
