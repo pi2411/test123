@@ -127,6 +127,7 @@ section.p19 a {
   margin-top: -27.5px;
   font-weight: lighter;
 }
+@media (pointer: coarse) and (hover: none) {
 section.p19 a:before, section.p19 a:after {
   content: "";
   position: absolute;
@@ -137,6 +138,10 @@ section.p19 a:before, section.p19 a:after {
   -moz-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
   transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
   opacity: 0;
+}
+video {
+   display: none;
+ }
 }
 section.p19 a:before {
   top: -20px;
