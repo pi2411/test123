@@ -8,12 +8,6 @@ html {
     padding-bottom: 70px;
 }
 .navbar  {
-  position: relative;
-  background-color: black;
-  height: 75vh;
-  min-height: 25rem;
-  width: 100%;
-  overflow: hidden;
 }
 .navbar video {
   position: absolute;
