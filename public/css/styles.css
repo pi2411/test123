@@ -4,7 +4,7 @@ html {
 }
 
 .container-fluid {
-    padding-top: 70px;
+    padding-top: 10px;
     padding-bottom: 70px;
 }
 .navbar {
@@ -115,7 +115,7 @@ html {
 }
 
 section {
-  height: 250px;
+  height: 100px;
   width: 94%;
   background-repeat: no-repeat;
   background-size: cover;
