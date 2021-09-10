@@ -14,31 +14,28 @@
   <link rel="stylesheet" href="/css/bootstrap-social.css">
 
   <nav class="navbar navbar-inverse">
-    <div class="container">
-     <section class="p19">
-     <div class="navbar-header">
-
-       <a class="navbar-brand" href="/">DAILY JOURNAL
-         <div class="s1"></div>
-         <div class="s2"></div>
-       </a>
-
-
-          <p>
-            <a class="btn btn-light btn-lg" href="/register" role="button">Register</a>
-            <a class="btn btn-dark btn-lg" href="/login" role="button">Login</a>
-          </p>
-  </section>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">WebSiteName</a>
+      </div>
       <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
           <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li id="home"><a href="/">HOME</a></li>
-           <li id="about"><a href="/about">ABOUT US</a></li>
-           <li id="contact"><a href="/contact">CONTACT US</a></li>
-           <li id="compose"><a href="/compose">COMPOSE</a></li>
+              <li><a href="#">Page 1-1</a></li>
+              <li><a href="#">Page 1-2</a></li>
+              <li><a href="#">Page 1-3</a></li>
             </ul>
           </li>
+          <li><a href="#">Page 2</a></li>
+          <li><a href="#">Page 3</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
