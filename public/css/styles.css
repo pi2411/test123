@@ -201,12 +201,15 @@ section.head a:hover:after {
 }
 section.p19
   header {
+    height: 100px;
+    width: 94%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     position: relative;
-    background-color: black;
-    height: 75vh;
-    min-height: 25rem;
-    width: 100%;
     overflow: hidden;
+    width: 100%;
+    margin: 0 auto 0px;
   }
 
   header video {
