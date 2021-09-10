@@ -227,9 +227,7 @@ section.head a:hover:after {
   -o-transform: scale(1.2) translate(25px, 15px);
   transform: scale(1.2) translate(25px, 15px);
 }
-section.p19 {
-  background-image: url("//caraujo_pens.surge.sh/images/JXtviCi.jpg");
-}
+
 section.p19 a {
   width: 330px;
   height: 55px;
