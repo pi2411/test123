@@ -200,7 +200,6 @@ section.head a:hover:after {
   transform: scale(1.2) translate(25px, 15px);
 }
 section.p19 {
-  background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
 }
 section.p19 a {
   width: 330px;
@@ -348,8 +347,7 @@ section.p19 a:hover .s2:before {
     clip-path: polygon(13% 0, 100% 43%, 100% 100%);
   }
 }
-
-section.p19 header {
+header {
   position: relative;
   background-color: black;
   height: 75vh;
@@ -358,7 +356,7 @@ section.p19 header {
   overflow: hidden;
 }
 
-section.p19 header video {
+header video {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -373,12 +371,12 @@ section.p19 header video {
   transform: translateX(-50%) translateY(-50%);
 }
 
-section.p19 header .container {
+header .container {
   position: relative;
   z-index: 2;
 }
 
-section.p19 header .overlay {
+header .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -392,3 +390,13 @@ section.p19 header .overlay {
 /* Media Query for devices withi coarse pointers and no hover functionality */
 
 /* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+  }
+
+  header video {
+    display: none;
+  }
+}
