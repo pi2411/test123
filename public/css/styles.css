@@ -230,6 +230,8 @@ section.p19
   }
 
   header .overlay {
+    position: relative;
+
     top: 0;
     left: 0;
     height: 100%;
