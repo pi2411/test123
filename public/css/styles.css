@@ -4,7 +4,7 @@ html {
 }
 
 .container-fluid {
-    padding-top: 70px;
+    padding-top: 10px;
     padding-bottom: 70px;
 }
 .navbar {
@@ -115,7 +115,7 @@ html {
 }
 
 section {
-  height: 250px;
+  height: 100px;
   width: 94%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -199,11 +199,6 @@ section.head a:hover:after {
   -o-transform: scale(1.2) translate(25px, 15px);
   transform: scale(1.2) translate(25px, 15px);
 }
-<<<<<<< HEAD
-section.p19 {
-  background-image: url("//caraujo_pens.surge.sh/images/JXtviCi.jpg");
-}
-=======
 section.p19
   header {
     position: relative;
@@ -235,15 +230,14 @@ section.p19
   }
 
   header .overlay {
-    height: 100px;
-    width: 94%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
-    margin: 0 auto 0px;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
   }
 
   /* Media Query for devices withi coarse pointers and no hover functionality */
@@ -259,7 +253,6 @@ section.p19
       display: none;
     }
   }
->>>>>>> 12052d945e4e147a64d66aab7550b48bef77430f
 section.p19 a {
   width: 330px;
   height: 55px;
@@ -276,7 +269,6 @@ section.p19 a:before, section.p19 a:after {
   position: absolute;
   width: 13%;
   height: 13px;
-  background-color: #000;
   -webkit-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
   -moz-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
   transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
