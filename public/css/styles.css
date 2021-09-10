@@ -137,7 +137,6 @@ section a:after, section a:before {
   content: "";
 }
 section.head {
-  background-color: #fff;
   position: relative;
   z-index: 10;
 }
