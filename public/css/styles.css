@@ -115,15 +115,50 @@ html {
 }
 
 section {
-  height: 250px;
-  width: 94%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
   position: relative;
-  overflow: hidden;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
   width: 100%;
-  margin: 0 auto 0px;
+  overflow: hidden;
+}
+section video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+section .container {
+  position: relative;
+  z-index: 2;
+}
+section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  section {
+    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+  }
+
+  section video {
+    display: none;
+  }
 }
 section a {
   text-transform: uppercase;
@@ -200,7 +235,6 @@ section.head a:hover:after {
   transform: scale(1.2) translate(25px, 15px);
 }
 section.p19 {
-  background-image: url("//caraujo_pens.surge.sh/images/JXtviCi.jpg");
 }
 section.p19 a {
   width: 330px;
