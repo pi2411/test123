@@ -145,7 +145,7 @@ html {
 }
 section.p19 header {
   position: relative;
-  background-color: black;
+  background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
   height: 75vh;
   min-height: 25rem;
   width: 100%;
