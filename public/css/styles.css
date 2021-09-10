@@ -115,17 +115,18 @@ html {
 }
 
 section {
-  height: 250px;
-  width: 94%;
-  box-shadow: 0px 0px 146px 21px rgba(0, 0, 0, 0.75);
-  background-color: #000;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  margin: 0 auto 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 section a {
   text-transform: uppercase;
