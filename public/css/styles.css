@@ -199,8 +199,7 @@ section.head a:hover:after {
   transform: scale(1.2) translate(25px, 15px);
 }
 header {
-  position: relative;
-  background-color: black;
+  position: absolute;
   height: 75vh;
   min-height: 25rem;
   width: 100%;
