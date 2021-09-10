@@ -17,7 +17,7 @@ html {
     letter-spacing: 5px;
 }
 .navbar-nav  li a:hover {
-    color: #1abc9c !important;
+    color: #E9967A	 !important;
 }
 
 .footer-padding {
@@ -117,8 +117,6 @@ html {
 section {
   height: 250px;
   width: 94%;
-  box-shadow: 0px 0px 146px 21px rgba(0, 0, 0, 0.75);
-  background-color: #000;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -203,7 +201,6 @@ section.head a:hover:after {
 }
 section.p19 {
   background-image: url("//caraujo_pens.surge.sh/images/JXtviCi.jpg");
-  font-family: "starjedi_special_edition";
 }
 section.p19 a {
   width: 330px;
