@@ -199,13 +199,8 @@ section.head a:hover:after {
   -o-transform: scale(1.2) translate(25px, 15px);
   transform: scale(1.2) translate(25px, 15px);
 }
-@media (pointer: coarse) and (hover: none) {
 section.p19 {
-background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
-}
-header video {
-    display: none;
-  }
+  background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
 }
 section.p19 a {
   width: 330px;
