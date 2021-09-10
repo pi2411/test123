@@ -115,20 +115,14 @@ html {
 }
 
 section {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+  position: relative;
+   background-color: black;
+   height: 75vh;
+   min-height: 25rem;
+   width: 100%;
+   overflow: hidden;
 }
-section a {
+ a {
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
