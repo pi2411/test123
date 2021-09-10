@@ -4,7 +4,7 @@ html {
 }
 
 .container-fluid {
-    padding-top: 70px;
+    padding-top: 10px;
     padding-bottom: 70px;
 }
 .navbar {
@@ -17,7 +17,7 @@ html {
     letter-spacing: 5px;
 }
 .navbar-nav  li a:hover {
-    color: #1abc9c !important;
+    color: #E9967A	 !important;
 }
 
 .footer-padding {
@@ -114,61 +114,145 @@ html {
   background: #dd4b39;
 }
 
-header {
+section {
+  height: 100px;
+  width: 94%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   position: relative;
-
-  height: 75vh;
-  min-height: 25rem;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
+  margin: 0 auto 0px;
 }
-
-header video {
+section a {
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  font-size: 4.875em;
+  font-weight: 900;
+  color: #fff;
+}
+section a:after, section a:before {
+  content: "";
+}
+section.head {
+  background-color: #fff;
+  position: relative;
+  z-index: 10;
+}
+section.head a {
+  width: 652px;
+  height: 78px;
+  line-height: 78px;
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+  margin-left: -326px;
+  margin-top: -39px;
+  font-weight: 200;
+  color: #BABABA;
+  -webkit-transition: all 2s cubic-bezier(0.21, 1, 0.84, 1.01);
+  -moz-transition: all 2s cubic-bezier(0.21, 1, 0.84, 1.01);
+  transition: all 2s cubic-bezier(0.21, 1, 0.84, 1.01);
 }
-
-header .container {
-  position: relative;
-  z-index: 2;
+section.head a:before, section.head a:after {
+  color: #000;
+  font-weight: 900;
+  font-size: 30px;
+  text-transform: none;
+  display: block;
+  -webkit-transition: inherit;
+  -moz-transition: inherit;
+  transition: inherit;
 }
-
-header .overlay {
+section.head a:before {
+  content: attr(data-bf);
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-
-  opacity: 0.5;
-  z-index: 1;
+  top: -45px;
+  left: -5px;
 }
-
-/* Media Query for devices withi coarse pointers and no hover functionality */
-
-/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
-
-@media (pointer: coarse) and (hover: none) {
+section.head a:after {
+  content: attr(data-af);
+  position: absolute;
+  right: 0;
+  bottom: -30px;
+}
+section.head a:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
+}
+section.head a:hover:before {
+  -webkit-transform: scale(1.2) translate(-25px, -15px);
+  -moz-transform: scale(1.2) translate(-25px, -15px);
+  -ms-transform: scale(1.2) translate(-25px, -15px);
+  -o-transform: scale(1.2) translate(-25px, -15px);
+  transform: scale(1.2) translate(-25px, -15px);
+}
+section.head a:hover:after {
+  -webkit-transform: scale(1.2) translate(25px, 15px);
+  -moz-transform: scale(1.2) translate(25px, 15px);
+  -ms-transform: scale(1.2) translate(25px, 15px);
+  -o-transform: scale(1.2) translate(25px, 15px);
+  transform: scale(1.2) translate(25px, 15px);
+}
+section.p19
   header {
-    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+    position: relative;
+    background-color: black;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
   }
 
   header video {
-    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
   }
-}
-section.p19 {
-}
+
+  header .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  /* Media Query for devices withi coarse pointers and no hover functionality */
+
+  /* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+
+  @media (pointer: coarse) and (hover: none) {
+    header {
+      background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+    }
+
+    header video {
+      display: none;
+    }
+  }
 section.p19 a {
   width: 330px;
   height: 55px;
@@ -185,7 +269,6 @@ section.p19 a:before, section.p19 a:after {
   position: absolute;
   width: 13%;
   height: 13px;
-
   -webkit-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
   -moz-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
   transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
@@ -313,58 +396,5 @@ section.p19 a:hover .s2:before {
   to {
     -webkit-clip-path: polygon(13% 0, 100% 43%, 100% 100%);
     clip-path: polygon(13% 0, 100% 43%, 100% 100%);
-  }
-}
-header {
-  position: relative;
-  background-color: black;
-  height: 75vh;
-  min-height: 25rem;
-  width: 100%;
-  overflow: hidden;
-}
-
-header video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
-
-header .container {
-  position: relative;
-  z-index: 2;
-}
-
-header .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  opacity: 0.5;
-  z-index: 1;
-}
-
-/* Media Query for devices withi coarse pointers and no hover functionality */
-
-/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
-
-@media (pointer: coarse) and (hover: none) {
-  header {
-    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
-  }
-
-  header video {
-    display: none;
   }
 }
