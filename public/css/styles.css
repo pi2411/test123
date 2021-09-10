@@ -7,18 +7,6 @@ html {
     padding-top: 10px;
     padding-bottom: 70px;
 }
-.navbar {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
-}
-.navbar-nav  li a:hover {
-    color: #E9967A	 !important;
-}
 
 .footer-padding {
 	padding-bottom: 60px;
@@ -121,6 +109,18 @@ header {
   min-height: 25rem;
   width: 100%;
   overflow: hidden;
+}
+ header .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+header .navbar-nav  li a:hover {
+    color: #E9967A	 !important;
 }
 
 header video {
