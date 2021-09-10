@@ -225,13 +225,12 @@ section.p19
   }
 
   header .container {
-    position: absolute;
+    position: relative;
     z-index: 2;
   }
 
   header .overlay {
     position: relative;
-
     top: 0;
     left: 0;
     height: 100%;
