@@ -1,3 +1,7 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
 header {
   position: relative;
   background-color: black;
@@ -50,6 +54,26 @@ header .overlay {
   header video {
     display: none;
   }
+}
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+    color: #E9967A	 !important;
+}
+
+.footer-padding {
+	padding-bottom: 60px;
 }
 
 .footer {
@@ -227,7 +251,8 @@ section.head a:hover:after {
   -o-transform: scale(1.2) translate(25px, 15px);
   transform: scale(1.2) translate(25px, 15px);
 }
-
+section.p19 {
+}
 section.p19 a {
   width: 330px;
   height: 55px;
