@@ -45,18 +45,6 @@ header .overlay {
     padding-top: 70px;
     padding-bottom: 70px;
 }
-.navbar {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
-}
-.navbar-nav  li a:hover {
-    color: #E9967A	 !important;
-}
 
 .footer-padding {
 	padding-bottom: 60px;
@@ -175,7 +163,6 @@ section a:after, section a:before {
   content: "";
 }
 section.head {
-  background-color: #fff;
   position: relative;
   z-index: 10;
 }
@@ -238,7 +225,7 @@ section.head a:hover:after {
   transform: scale(1.2) translate(25px, 15px);
 }
 section.p19 {
-  
+
 }
 section.p19 a {
   width: 330px;
