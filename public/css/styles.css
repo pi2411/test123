@@ -103,7 +103,7 @@ html {
 .foot li:nth-child(4) a:before {
   background: #dd4b39;
 }
-.header {
+header {
   position: relative;
   background-color: black;
   height: 75vh;
@@ -112,7 +112,7 @@ html {
   overflow: hidden;
 }
 
-.header video {
+header video {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -127,12 +127,12 @@ html {
   transform: translateX(-50%) translateY(-50%);
 }
 
-.header .container {
+header .container {
   position: relative;
   z-index: 2;
 }
 
-.header .overlay {
+header .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -148,11 +148,11 @@ html {
 /* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
 
 @media (pointer: coarse) and (hover: none) {
-  .header {
+  header {
     background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
   }
 
-  .header video {
+  header video {
     display: none;
   }
 }
