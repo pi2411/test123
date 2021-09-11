@@ -3,6 +3,10 @@ html {
   position: relative;
 }
 
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
 .navigation{
   padding-top:30px;
   padding-bottom:30px;
@@ -92,6 +96,7 @@ font-family:Arial;
   width:375px;
   font-size:40px;
 }
+
 
 .footer-padding {
 	padding-bottom: 60px;
@@ -187,8 +192,6 @@ font-family:Arial;
   background: #dd4b39;
 }
 section.p19 {
-  background-image: url("//caraujo_pens.surge.sh/images/JXtviCi.jpg");
-  font-family: "starjedi_special_edition";
 }
 section.p19 a {
   width: 330px;
