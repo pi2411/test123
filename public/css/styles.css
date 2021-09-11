@@ -7,94 +7,17 @@ html {
     padding-top: 70px;
     padding-bottom: 70px;
 }
-.navigation{
-  padding-top:30px;
-  padding-bottom:30px;
-  position:absolute;
-  top:0;
-  width:100%;
-  z-index:1;
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
 }
-
-.navbar-right{
-  float:right;
-  padding-right:10%;
-}
-
-.navbar-right a{
-  text-decoration:none;
-  padding:10px;
-  color: #fff;
-  font-family:Arial;
-  font-weight:900;
-}
-
-.navbar-right a:hover{
-  text-decoration:underline;
-}
-.navbar-logo{
-  padding-left:10%;
-  font-family:Arial;
-  font-size:30px;
-  font-weight:bold;
-  text-decoration:none;
-  color:#fff;
-}
-
-.video-container {
-z-index: -100;
-width:100%;
-height:75%;
-overflow:hidden;
-position:absolute;
-top:0;
-left:0;
-}
-
-#video-bg{
-  width:100%;
-
-}
-
-.portfolio-section{
-  margin-top:50%;
-}
-.tagline-left{
-  float:left;
-  width:50%;
-  text-align:center;
-}
-
-.tagline-right{
-  float:right;
-  width:50%;
-  text-align:center;
-}
-
-.tagline-video{
-  width:75%;
-}
-
-.tagline-right-text{
- position:absolute;
- margin-top:9%;
- text-align:center;
- margin-left:17%;
-font-family:Arial;
- color:#fff;
-  width:290px;
-  font-size:40px;
-}
-
-.tagline-left-text{
- position:absolute;
- margin-top:9%;
- text-align:center;
- margin-left:11%;
-font-family:Arial;
- color:#fff;
-  width:375px;
-  font-size:40px;
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
 }
 
 .footer-padding {
@@ -191,6 +114,8 @@ font-family:Arial;
   background: #dd4b39;
 }
 section.p19 {
+  background-image: url("//caraujo_pens.surge.sh/images/JXtviCi.jpg");
+  font-family: "starjedi_special_edition";
 }
 section.p19 a {
   width: 330px;
