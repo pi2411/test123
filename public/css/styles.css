@@ -7,96 +7,18 @@ html {
     padding-top: 70px;
     padding-bottom: 70px;
 }
-.navigation{
-  padding-top:30px;
-  padding-bottom:30px;
-  position:absolute;
-  top:0;
-  width:100%;
-  z-index:1;
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
 }
-
-.navbar-right{
-  float:right;
-  padding-right:10%;
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
 }
-
-.navbar-right a{
-  text-decoration:none;
-  padding:10px;
-  color: #fff;
-  font-family:Arial;
-  font-weight:900;
-}
-
-.navbar-right a:hover{
-  text-decoration:underline;
-}
-.navbar-logo{
-  padding-left:10%;
-  font-family:Arial;
-  font-size:30px;
-  font-weight:bold;
-  text-decoration:none;
-  color:#fff;
-}
-
-.video-container {
-z-index: -100;
-width:100%;
-height:75%;
-overflow:hidden;
-position:absolute;
-top:0;
-left:0;
-}
-
-#video-bg{
-  width:100%;
-
-}
-
-.portfolio-section{
-  margin-top:50%;
-}
-.tagline-left{
-  float:left;
-  width:50%;
-  text-align:center;
-}
-
-.tagline-right{
-  float:right;
-  width:50%;
-  text-align:center;
-}
-
-.tagline-video{
-  width:75%;
-}
-
-.tagline-right-text{
- position:absolute;
- margin-top:9%;
- text-align:center;
- margin-left:17%;
-font-family:Arial;
- color:#fff;
-  width:290px;
-  font-size:40px;
-}
-
-.tagline-left-text{
- position:absolute;
- margin-top:9%;
- text-align:center;
- margin-left:11%;
-font-family:Arial;
- color:#fff;
-  width:375px;
-  font-size:40px;
-}
-
 
 .footer-padding {
 	padding-bottom: 60px;
@@ -115,4 +37,229 @@ font-family:Arial;
 	margin-top: 25px;
 	font-size: 12px;
   color: #fff;
+}
+
+
+
+
+.foot {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+}
+
+.foot li {
+  list-style: none;
+}
+
+.foot li a {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  text-align: right;
+  line-height: 40px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+}
+
+.foot li a .icon {
+  position: relative;
+  color: #262626;
+  transition: .5s;
+  z-index: 3;
+}
+
+.foot li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.foot li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: .5s;
+  z-index: 2;
+}
+
+.foot li a:hover:before {
+  top: 0;
+}
+
+.foot li:nth-child(1) a:before{
+  background: #3b5999;
+}
+
+.foot li:nth-child(2) a:before{
+  background: #55acee;
+}
+
+.foot li:nth-child(3) a:before {
+  background: #0077b5;
+}
+
+.foot li:nth-child(4) a:before {
+  background: #dd4b39;
+}
+section.p19 {
+  background-image: url("//caraujo_pens.surge.sh/images/JXtviCi.jpg");
+  font-family: "starjedi_special_edition";
+}
+section.p19 a {
+  width: 330px;
+  height: 55px;
+  line-height: 55px;
+  position: absolute;
+  top: 42.5%;
+  left: 2%;
+  margin-left: -165px;
+  margin-top: -27.5px;
+  font-weight: lighter;
+}
+section.p19 a:before, section.p19 a:after {
+  content: "";
+  position: absolute;
+  width: 13%;
+  height: 13px;
+  background-color: #000;
+  -webkit-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+  -moz-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+  transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+  opacity: 0;
+}
+section.p19 a:before {
+  top: -20px;
+  right: 0;
+}
+section.p19 a:after {
+  bottom: -35px;
+  left: 0;
+}
+section.p19 a .s1 {
+  position: absolute;
+  background-color: #26c9ff;
+  width: 0;
+  height: 13px;
+  top: -20px;
+  box-shadow: 0px 0px 0px #26c9ff;
+  right: 13%;
+  border-radius: 20px 10px 10px 20px;
+  -webkit-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+  -moz-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+  transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+}
+section.p19 a .s1:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1%;
+  right: 0;
+  bottom: -15%;
+  box-shadow: 0px 0px 0px #26c9ff;
+  border-radius: 20px 10px 10px 20px;
+}
+section.p19 a .s1:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0%;
+  top: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  -webkit-filter: blur(3px);
+  filter: blur(1px);
+  box-shadow: inset 0px 0px 10px #26c9ff;
+  border-radius: 20px 10px 10px 20px;
+}
+section.p19 a .s2 {
+  position: absolute;
+  background-color: #ff0000;
+  width: 0;
+  height: 13px;
+  bottom: -35px;
+  box-shadow: 0px 0px 0px #ff0000;
+  left: 13%;
+  border-radius: 10px 20px 20px 10px;
+  z-index: 1000;
+  -webkit-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+  -moz-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+  transition: all 0.3s cubic-bezier(0.17, 0.67, 0.46, 0.97);
+}
+section.p19 a .s2:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1%;
+  right: 0;
+  bottom: -15%;
+  box-shadow: 0px 0px 0px #ff0000;
+  border-radius: 10px 20px 20px 10px;
+}
+section.p19 a .s2:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0%;
+  top: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  -webkit-filter: blur(3px);
+  filter: blur(1px);
+  box-shadow: inset 0px 0px 10px #ff0000;
+  border-radius: 10px 20px 20px 10px;
+}
+section.p19 a:hover:before {
+  opacity: 1;
+}
+section.p19 a:hover:after {
+  opacity: 1;
+}
+section.p19 a:hover .s1 {
+  width: 87%;
+  box-shadow: 0px 0px 30px #26c9ff;
+  top: -20px;
+}
+section.p19 a:hover .s1:before {
+  box-shadow: 0px 0px 70px #26c9ff;
+}
+section.p19 a:hover .s2 {
+  width: 87%;
+  box-shadow: 0px 0px 30px #ff0000;
+  bottom: -35px;
+}
+section.p19 a:hover .s2:before {
+  box-shadow: 0px 0px 70px #ff0000;
+}
+
+@-webkit-keyframes voavoa {
+  from {
+    -webkit-clip-path: polygon(0 35%, 100% 43%, 100% 100%);
+    clip-path: polygon(0 35%, 100% 43%, 100% 100%);
+  }
+  to {
+    -webkit-clip-path: polygon(13% 0, 100% 43%, 100% 100%);
+    clip-path: polygon(13% 0, 100% 43%, 100% 100%);
+  }
+}
+@-moz-keyframes voavoa {
+  from {
+    -webkit-clip-path: polygon(0 35%, 100% 43%, 100% 100%);
+    clip-path: polygon(0 35%, 100% 43%, 100% 100%);
+  }
+  to {
+    -webkit-clip-path: polygon(13% 0, 100% 43%, 100% 100%);
+    clip-path: polygon(13% 0, 100% 43%, 100% 100%);
+  }
 }
