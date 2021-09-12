@@ -69,6 +69,8 @@ html {
 .footer {
 	position: absolute;
 	text-align: center;
+  margin-top: auto;
+  padding: 1.5em 0;
 	bottom: 0;
 	width: 100%;
 	height: 60px;
