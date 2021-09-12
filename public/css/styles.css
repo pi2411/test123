@@ -30,7 +30,7 @@ html {
   -ms-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-58%) translateY(-52%);
+  transform: translateX(-63%) translateY(-52%);
 }
 
 .navbar-default .container {
@@ -67,7 +67,7 @@ html {
 }
 
 .footer {
-	position: absolute;
+	position: Fixed;
 	text-align: center;
 	bottom: 0;
 	width: 100%;
