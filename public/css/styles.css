@@ -211,3 +211,7 @@ transform: translateX(-67%) translateY(-110%);
 .input-group-addon .fa{
     font-size: 18px;
 }
+
+textarea.form-control {
+    height: 73px;
+}
