@@ -17,20 +17,20 @@ html {
     letter-spacing: 5px;
 }
 .navbar-default  video {
-      position: absolute;
-      padding-top: 44px;
-      padding-bottom: 214px;
-      top: 120%;
-      left: 59%;
-      min-width: 57%;
-      min-height: 87%;
-      width: 22%;
-      height: 289%;
-      z-index: 1;
-      -ms-transform: translateX(-50%) translateY(-50%);
-      -moz-transform: translateX(-50%) translateY(-50%);
-      -webkit-transform: translateX(-50%) translateY(-50%);
-      transform: translateX(-68%) translateY(-75%);
+  position: absolute;
+padding-top: 59px;
+padding-bottom: 4px;
+top: 120%;
+left: 59%;
+min-width: 57%;
+min-height: 181%;
+width: 22%;
+height: 115%;
+z-index: 1;
+-ms-transform: translateX(-50%) translateY(-50%);
+-moz-transform: translateX(-50%) translateY(-50%);
+-webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-67%) translateY(-110%);
 }
 
 .navbar-default .container {
