@@ -62,6 +62,12 @@ transform: translateX(-67%) translateY(-110%);
   display: none;
  }
 }
+.navbar-brand {
+    float: left;
+    padding: 15px 15px;
+    font-size: 91px;
+    line-height: 20px;
+}
 .footer-padding {
 	padding-bottom: 60px;
 }
