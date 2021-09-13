@@ -2,12 +2,7 @@ html {
   min-height: 100%;
   position: relative;
 }
-.row {
-    margin-right: -90px;
-    margin-left: 222px;
-    margin-top: 10px;
-    width: 685px;
-}
+
 .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
