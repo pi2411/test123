@@ -212,6 +212,6 @@ transform: translateX(-67%) translateY(-110%);
     font-size: 18px;
 }
 
-textarea.form-control {
+.form-control textarea {
     height: 73px;
 }
