@@ -62,7 +62,7 @@ transform: translateX(-67%) translateY(-110%);
   display: none;
  }
 }
-.navbar-brand {
+.navbar-default .navbar-brand {
     float: left;
     padding: 15px 15px;
     font-size: 91px;
