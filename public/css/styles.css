@@ -157,6 +157,17 @@ transform: translateX(-67%) translateY(-110%);
 .footIcon li:nth-child(4) a:before {
   background: #dd4b39;
 }
+
+.header{
+position: fixed; 
+width: 1341px;
+height: 230px;
+
+}
+
+
+
+
 .login-form {
     width: 340px;
     margin: -9px -8.5px;
